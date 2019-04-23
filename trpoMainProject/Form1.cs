@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
+using System.Diagnostics;
 
 namespace trpoMainProject
 {
@@ -264,7 +265,9 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
         {
             string query = $@"Select Заказ.*, Фамилия & ' ' & Имя & ' ' & Отчество As fullname 
 From Заказ Inner Join Покупатель On Покупатель.КодПокупателя = Заказ.КодПокупателя
-Where Заказ.ОбщаяСтоимость  Between {(int)fromPriceNumeric.Value} And {(int)toPriceNumeric.Value} Or  InStr(Фамилия & ' ' & Имя & ' ' & Отчество, '{fullNameBoxOrder.Text}') > 0";
+Where Заказ.ОбщаяСтоимость  Between {(int)fromPriceNumeric.Value} And {(int)toPriceNumeric.Value} 
+And  InStr(Фамилия & ' ' & Имя & ' ' & Отчество, '{fullNameBoxOrder.Text}')> 0
+And ДатаОформления Between @dateFrom And @dateTo";
             OleDbCommand com = new OleDbCommand(query, _conn);
             var reader = com.ExecuteReader();
             if (reader.HasRows)
@@ -443,17 +446,67 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 
         private void ВедомостьВWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void ToPriceNumeric_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToPriceNumeric_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void ToPriceNumeric_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+        }
+
+        private void FromPriceNumeric_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+        }
+
+        private void ВедомостьВExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.AddExtension = true;
+            saveDialog.DefaultExt = ".xlsx";
             saveDialog.ShowDialog();
             string path = saveDialog.FileName;
             var excelApp = new Excel.Application();
             var workBook = excelApp.Workbooks.Add();
-            var workSheet = workBook.ActiveSheet;
+            Excel.Worksheet workSheet = workBook.ActiveSheet;
             workSheet.Cells[1, 1] = "Номер";
+            workSheet.Columns[1].ColumnWidth = 6;
             workSheet.Cells[1, 2] = "ФИО";
+            workSheet.Columns[2].ColumnWidth = 20;
             workSheet.Cells[1, 3] = "Дата";
+            workSheet.Columns[3].ColumnWidth = 10;
             workSheet.Cells[1, 4] = "Стоимость заказа";
-
+            workSheet.Columns[4].ColumnWidth = 25;
+            for (int i = 0; i < ordersGrid.Rows.Count; i++)
+            {
+                workSheet.Cells[i + 2, 1] = ordersGrid[0, i].Value;
+                workSheet.Cells[i + 2, 2] = ordersGrid[1, i].Value;
+                workSheet.Cells[i + 2, 3] = ordersGrid[2, i].Value;
+                workSheet.Cells[i + 2, 4] = ordersGrid[0, i].Value;
+            }
+            var rng = workSheet.Range[$"D{ordersGrid.Rows.Count + 1}"];
+            rng.Formula = $"=SUM(D2:D{ordersGrid.Rows.Count})";
+            workSheet.Range[$"C{ordersGrid.Rows.Count + 1}"].Value = "Итого:";
+            rng.FormulaHidden = false;
+            workBook.SaveAs(path);
+            workBook.Close();
+            System.Diagnostics.Process.Start(path);
 
         }
     }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileOpenMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +41,8 @@
             this.recordUpdMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.recordDelMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.docMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ведомостьВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ведомостьВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsPage = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -125,8 +127,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nameProductAddBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.ведомостьВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ведомостьВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -197,21 +201,21 @@
             // recordAddMenuBtn
             // 
             this.recordAddMenuBtn.Name = "recordAddMenuBtn";
-            this.recordAddMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.recordAddMenuBtn.Size = new System.Drawing.Size(128, 22);
             this.recordAddMenuBtn.Text = "Добавить";
             this.recordAddMenuBtn.Click += new System.EventHandler(this.recordAddMenuBtn_Click);
             // 
             // recordUpdMenuBtn
             // 
             this.recordUpdMenuBtn.Name = "recordUpdMenuBtn";
-            this.recordUpdMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.recordUpdMenuBtn.Size = new System.Drawing.Size(128, 22);
             this.recordUpdMenuBtn.Text = "Изменить";
             this.recordUpdMenuBtn.Visible = false;
             // 
             // recordDelMenuBtn
             // 
             this.recordDelMenuBtn.Name = "recordDelMenuBtn";
-            this.recordDelMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.recordDelMenuBtn.Size = new System.Drawing.Size(128, 22);
             this.recordDelMenuBtn.Text = "Удалить";
             this.recordDelMenuBtn.Click += new System.EventHandler(this.recordDelMenuBtn_Click);
             // 
@@ -223,6 +227,20 @@
             this.docMenuBtn.Name = "docMenuBtn";
             this.docMenuBtn.Size = new System.Drawing.Size(78, 20);
             this.docMenuBtn.Text = "Ведомость";
+            // 
+            // ведомостьВWordToolStripMenuItem
+            // 
+            this.ведомостьВWordToolStripMenuItem.Name = "ведомостьВWordToolStripMenuItem";
+            this.ведомостьВWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ведомостьВWordToolStripMenuItem.Text = "Ведомость в word";
+            this.ведомостьВWordToolStripMenuItem.Click += new System.EventHandler(this.ВедомостьВWordToolStripMenuItem_Click);
+            // 
+            // ведомостьВExcelToolStripMenuItem
+            // 
+            this.ведомостьВExcelToolStripMenuItem.Name = "ведомостьВExcelToolStripMenuItem";
+            this.ведомостьВExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ведомостьВExcelToolStripMenuItem.Text = "Ведомость в excel";
+            this.ведомостьВExcelToolStripMenuItem.Click += new System.EventHandler(this.ВедомостьВExcelToolStripMenuItem_Click);
             // 
             // helpMenuBtn
             // 
@@ -283,12 +301,13 @@
             // 
             this.idClients.HeaderText = "Id";
             this.idClients.Name = "idClients";
+            this.idClients.ReadOnly = true;
             this.idClients.Visible = false;
             // 
             // fullnameClmn
             // 
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle1;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
             this.fullnameClmn.ReadOnly = true;
@@ -296,8 +315,8 @@
             // 
             // addressClientClmn
             // 
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle2;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
             this.addressClientClmn.ReadOnly = true;
@@ -307,12 +326,13 @@
             // 
             this.dateBirthClmn.HeaderText = "Дата рождения";
             this.dateBirthClmn.Name = "dateBirthClmn";
+            this.dateBirthClmn.ReadOnly = true;
             // 
             // phoneNumberClientClmn
             // 
-            dataGridViewCellStyle11.Format = "+375 (00) 000 00 00";
-            dataGridViewCellStyle11.NullValue = null;
-            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Format = "+375 (00) 000 00 00";
+            dataGridViewCellStyle3.NullValue = null;
+            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle3;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
             this.phoneNumberClientClmn.ReadOnly = true;
@@ -508,6 +528,7 @@
             // 
             this.idType.HeaderText = "Id";
             this.idType.Name = "idType";
+            this.idType.ReadOnly = true;
             this.idType.Visible = false;
             // 
             // nameTypeClmn
@@ -515,12 +536,14 @@
             this.nameTypeClmn.HeaderText = "Название вида";
             this.nameTypeClmn.MinimumWidth = 150;
             this.nameTypeClmn.Name = "nameTypeClmn";
+            this.nameTypeClmn.ReadOnly = true;
             this.nameTypeClmn.Width = 150;
             // 
             // typeDisriptionClmn
             // 
             this.typeDisriptionClmn.HeaderText = "Описание типа";
             this.typeDisriptionClmn.Name = "typeDisriptionClmn";
+            this.typeDisriptionClmn.ReadOnly = true;
             this.typeDisriptionClmn.Width = 300;
             // 
             // addTypePanel
@@ -591,6 +614,10 @@
             // 
             // orderPage
             // 
+            this.orderPage.Controls.Add(this.label26);
+            this.orderPage.Controls.Add(this.dateTo);
+            this.orderPage.Controls.Add(this.label25);
+            this.orderPage.Controls.Add(this.dateFrom);
             this.orderPage.Controls.Add(this.label3);
             this.orderPage.Controls.Add(this.toPriceNumeric);
             this.orderPage.Controls.Add(this.fromPriceNumeric);
@@ -612,7 +639,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(589, 171);
+            this.label3.Location = new System.Drawing.Point(589, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 8;
@@ -620,7 +647,7 @@
             // 
             // toPriceNumeric
             // 
-            this.toPriceNumeric.Location = new System.Drawing.Point(693, 187);
+            this.toPriceNumeric.Location = new System.Drawing.Point(693, 209);
             this.toPriceNumeric.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -629,10 +656,13 @@
             this.toPriceNumeric.Name = "toPriceNumeric";
             this.toPriceNumeric.Size = new System.Drawing.Size(75, 20);
             this.toPriceNumeric.TabIndex = 7;
+            this.toPriceNumeric.ValueChanged += new System.EventHandler(this.ToPriceNumeric_ValueChanged);
+            this.toPriceNumeric.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToPriceNumeric_KeyDown);
+            this.toPriceNumeric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ToPriceNumeric_KeyPress);
             // 
             // fromPriceNumeric
             // 
-            this.fromPriceNumeric.Location = new System.Drawing.Point(592, 187);
+            this.fromPriceNumeric.Location = new System.Drawing.Point(592, 209);
             this.fromPriceNumeric.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -641,6 +671,7 @@
             this.fromPriceNumeric.Name = "fromPriceNumeric";
             this.fromPriceNumeric.Size = new System.Drawing.Size(75, 20);
             this.fromPriceNumeric.TabIndex = 6;
+            this.fromPriceNumeric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FromPriceNumeric_KeyPress);
             // 
             // filtrationBtn
             // 
@@ -706,22 +737,26 @@
             // 
             this.IdOrderClmn.HeaderText = "Id";
             this.IdOrderClmn.Name = "IdOrderClmn";
+            this.IdOrderClmn.ReadOnly = true;
             this.IdOrderClmn.Visible = false;
             // 
             // fullnameOrderClmn
             // 
             this.fullnameOrderClmn.HeaderText = "ФИО";
             this.fullnameOrderClmn.Name = "fullnameOrderClmn";
+            this.fullnameOrderClmn.ReadOnly = true;
             // 
             // dateOrderClmn
             // 
             this.dateOrderClmn.HeaderText = "Дата заказа";
             this.dateOrderClmn.Name = "dateOrderClmn";
+            this.dateOrderClmn.ReadOnly = true;
             // 
             // sumOrderClmn
             // 
             this.sumOrderClmn.HeaderText = "Сумма заказа";
             this.sumOrderClmn.Name = "sumOrderClmn";
+            this.sumOrderClmn.ReadOnly = true;
             // 
             // tables
             // 
@@ -821,6 +856,7 @@
             // 
             this.idProduct.HeaderText = "Id";
             this.idProduct.Name = "idProduct";
+            this.idProduct.ReadOnly = true;
             this.idProduct.Visible = false;
             this.idProduct.Width = 5;
             // 
@@ -828,34 +864,39 @@
             // 
             this.nameProductClmn.HeaderText = "Название продукта";
             this.nameProductClmn.Name = "nameProductClmn";
+            this.nameProductClmn.ReadOnly = true;
             // 
             // typeProductClmn
             // 
             this.typeProductClmn.HeaderText = "Вид продукции";
             this.typeProductClmn.Name = "typeProductClmn";
+            this.typeProductClmn.ReadOnly = true;
             // 
             // priceProductClmn
             // 
             this.priceProductClmn.HeaderText = "Цена";
             this.priceProductClmn.Name = "priceProductClmn";
+            this.priceProductClmn.ReadOnly = true;
             this.priceProductClmn.Width = 75;
             // 
             // qtyProductClmn
             // 
             this.qtyProductClmn.HeaderText = "Количество на складе";
             this.qtyProductClmn.Name = "qtyProductClmn";
+            this.qtyProductClmn.ReadOnly = true;
             this.qtyProductClmn.Width = 75;
             // 
             // dateProductClmn
             // 
             this.dateProductClmn.HeaderText = "Год производства";
             this.dateProductClmn.Name = "dateProductClmn";
+            this.dateProductClmn.ReadOnly = true;
             this.dateProductClmn.Width = 80;
             // 
             // descriptionProductClmn
             // 
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle4;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
             this.descriptionProductClmn.ReadOnly = true;
@@ -1021,18 +1062,37 @@
             this.label7.Text = "Добавить товар";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // ведомостьВWordToolStripMenuItem
+            // dateFrom
             // 
-            this.ведомостьВWordToolStripMenuItem.Name = "ведомостьВWordToolStripMenuItem";
-            this.ведомостьВWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ведомостьВWordToolStripMenuItem.Text = "Ведомость в word";
-            this.ведомостьВWordToolStripMenuItem.Click += new System.EventHandler(this.ВедомостьВWordToolStripMenuItem_Click);
+            this.dateFrom.Location = new System.Drawing.Point(592, 131);
+            this.dateFrom.Name = "dateFrom";
+            this.dateFrom.Size = new System.Drawing.Size(176, 20);
+            this.dateFrom.TabIndex = 9;
             // 
-            // ведомостьВExcelToolStripMenuItem
+            // label25
             // 
-            this.ведомостьВExcelToolStripMenuItem.Name = "ведомостьВExcelToolStripMenuItem";
-            this.ведомостьВExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ведомостьВExcelToolStripMenuItem.Text = "Ведомость в excel";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(590, 115);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(116, 13);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "Дата начала периода";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(590, 154);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(111, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Дата конца периода";
+            // 
+            // dateTo
+            // 
+            this.dateTo.Location = new System.Drawing.Point(592, 170);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(176, 20);
+            this.dateTo.TabIndex = 11;
             // 
             // MainForm
             // 
@@ -1175,6 +1235,10 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ToolStripMenuItem ведомостьВWordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ведомостьВExcelToolStripMenuItem;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.DateTimePicker dateTo;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DateTimePicker dateFrom;
     }
 }
 
