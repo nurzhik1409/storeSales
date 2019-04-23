@@ -62,6 +62,7 @@
             this.price});
             this.productGrid.Location = new System.Drawing.Point(12, 12);
             this.productGrid.Name = "productGrid";
+            this.productGrid.ReadOnly = true;
             this.productGrid.Size = new System.Drawing.Size(420, 280);
             this.productGrid.TabIndex = 0;
             this.productGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -127,7 +128,7 @@
             this.addOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addOrderBtn.Location = new System.Drawing.Point(438, 226);
             this.addOrderBtn.Name = "addOrderBtn";
-            this.addOrderBtn.Size = new System.Drawing.Size(218, 66);
+            this.addOrderBtn.Size = new System.Drawing.Size(207, 66);
             this.addOrderBtn.TabIndex = 9;
             this.addOrderBtn.Text = "Соверишть Заказ";
             this.addOrderBtn.UseVisualStyleBackColor = true;
@@ -135,7 +136,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.addProductBtn);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -148,7 +149,7 @@
             // 
             // addProductBtn
             // 
-            this.addProductBtn.Location = new System.Drawing.Point(131, 98);
+            this.addProductBtn.Location = new System.Drawing.Point(125, 96);
             this.addProductBtn.Name = "addProductBtn";
             this.addProductBtn.Size = new System.Drawing.Size(75, 23);
             this.addProductBtn.TabIndex = 13;
@@ -159,16 +160,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-3, 56);
+            this.label3.Location = new System.Drawing.Point(3, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Количество товара";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-3, 6);
+            this.label2.Location = new System.Drawing.Point(3, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 11;
@@ -176,14 +178,14 @@
             // 
             // qtyNumeric
             // 
-            this.qtyNumeric.Location = new System.Drawing.Point(0, 72);
+            this.qtyNumeric.Location = new System.Drawing.Point(3, 72);
             this.qtyNumeric.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.qtyNumeric.Name = "qtyNumeric";
-            this.qtyNumeric.Size = new System.Drawing.Size(206, 20);
+            this.qtyNumeric.Size = new System.Drawing.Size(197, 20);
             this.qtyNumeric.TabIndex = 10;
             this.qtyNumeric.Value = new decimal(new int[] {
             1,
@@ -194,16 +196,16 @@
             // productBox
             // 
             this.productBox.FormattingEnabled = true;
-            this.productBox.Location = new System.Drawing.Point(0, 22);
+            this.productBox.Location = new System.Drawing.Point(3, 22);
             this.productBox.Name = "productBox";
-            this.productBox.Size = new System.Drawing.Size(206, 21);
+            this.productBox.Size = new System.Drawing.Size(197, 21);
             this.productBox.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(438, 72);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // label4
@@ -228,6 +230,7 @@
             this.Controls.Add(this.clientBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.productGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddOrder";
             this.Text = "AddOrder";
             this.Load += new System.EventHandler(this.AddOrder_Load);

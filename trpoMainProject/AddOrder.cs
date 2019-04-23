@@ -221,5 +221,10 @@ namespace trpoMainProject
                 InitBox();
             }
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

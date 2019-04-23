@@ -269,6 +269,8 @@ Where Заказ.ОбщаяСтоимость  Between {(int)fromPriceNumeric.Va
 And  InStr(Фамилия & ' ' & Имя & ' ' & Отчество, '{fullNameBoxOrder.Text}')> 0
 And ДатаОформления Between @dateFrom And @dateTo";
             OleDbCommand com = new OleDbCommand(query, _conn);
+            com.Parameters.Add(new OleDbParameter("@dateFrom", dateFrom.Value.ToShortDateString()));
+            com.Parameters.Add(new OleDbParameter("@dateTo", dateTo.Value.ToShortDateString()));
             var reader = com.ExecuteReader();
             if (reader.HasRows)
             {
@@ -508,6 +510,11 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
             workBook.Close();
             System.Diagnostics.Process.Start(path);
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            showOrders();
         }
     }
 }

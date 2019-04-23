@@ -131,6 +131,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.resetOrderGrid = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -614,6 +615,7 @@
             // 
             // orderPage
             // 
+            this.orderPage.Controls.Add(this.resetOrderGrid);
             this.orderPage.Controls.Add(this.label26);
             this.orderPage.Controls.Add(this.dateTo);
             this.orderPage.Controls.Add(this.label25);
@@ -675,9 +677,9 @@
             // 
             // filtrationBtn
             // 
-            this.filtrationBtn.Location = new System.Drawing.Point(592, 275);
+            this.filtrationBtn.Location = new System.Drawing.Point(662, 275);
             this.filtrationBtn.Name = "filtrationBtn";
-            this.filtrationBtn.Size = new System.Drawing.Size(177, 23);
+            this.filtrationBtn.Size = new System.Drawing.Size(107, 23);
             this.filtrationBtn.TabIndex = 5;
             this.filtrationBtn.Text = "Фильтрация";
             this.filtrationBtn.UseVisualStyleBackColor = true;
@@ -1094,6 +1096,16 @@
             this.dateTo.Size = new System.Drawing.Size(176, 20);
             this.dateTo.TabIndex = 11;
             // 
+            // resetOrderGrid
+            // 
+            this.resetOrderGrid.Location = new System.Drawing.Point(592, 275);
+            this.resetOrderGrid.Name = "resetOrderGrid";
+            this.resetOrderGrid.Size = new System.Drawing.Size(64, 23);
+            this.resetOrderGrid.TabIndex = 13;
+            this.resetOrderGrid.Text = "Сбросить";
+            this.resetOrderGrid.UseVisualStyleBackColor = true;
+            this.resetOrderGrid.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1239,6 +1251,7 @@
         private System.Windows.Forms.DateTimePicker dateTo;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DateTimePicker dateFrom;
+        private System.Windows.Forms.Button resetOrderGrid;
     }
 }
 
