@@ -12,3 +12,17 @@ C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\bin\Debug\PCShop1.ac
 C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.AutorizationForm.resources
 C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.RegistrationForm.resources
 C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.AddOrder.resources
+Q:\Projects\repositories\storeSales\trpoMainProject\bin\Debug\PCShop1.accdb
+Q:\Projects\repositories\storeSales\trpoMainProject\bin\Debug\trpoMainProject.exe.config
+Q:\Projects\repositories\storeSales\trpoMainProject\bin\Debug\trpoMainProject.exe
+Q:\Projects\repositories\storeSales\trpoMainProject\bin\Debug\trpoMainProject.pdb
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.csprojAssemblyReference.cache
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.AddOrder.resources
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.AutorizationForm.resources
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.MainForm.resources
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.Properties.Resources.resources
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.RegistrationForm.resources
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.csproj.GenerateResource.cache
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.csproj.CoreCompileInputs.cache
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.exe
+Q:\Projects\repositories\storeSales\trpoMainProject\obj\Debug\trpoMainProject.pdb
