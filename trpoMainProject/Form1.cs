@@ -26,7 +26,7 @@ namespace trpoMainProject
             InitializeComponent();
             changeTemplateGrid();
             dbInit();
-            autariztion();
+            //autariztion();
             showTables();
         }
 
@@ -270,10 +270,10 @@ Where Заказ.ОбщаяСтоимость  Between {(int)fromPriceNumeric.Va
             if (reader.HasRows)
             {
                 ordersGrid.RowCount = 1;
-                OleDbDataAdapter adapter = new OleDbDataAdapter(com);
-                DataTable data = new DataTable();
-                adapter.Fill(data);
-                ordersGrid.DataSource = data;
+                while (reader.Read()) 
+                {
+                    ordersGrid.Rows.Add(reader["КодЗаказа"], reader["fullname"], ((DateTime)reader["ДатаОформления"]).ToShortDateString(), reader["ОбщаяСтоимость"]);
+                }
             }
             else
             {
@@ -322,7 +322,7 @@ Where КодЗаказа = {idOrder}";
 
                 while (reader.Read())
                 {
-                    message += $"{reader["Название"],-30} Количество:{reader["КолТов"],-9} Стоимость:{reader["Summ"],-9}\n";
+                    message += $"|{reader["Название"], -50}|" +  $"{"Кол-во:" + reader["КолТов"],-15}" +  $"{"Сум:" + reader["Summ"], -10}\n";
                 }
                 MessageBox.Show(message);
             }
