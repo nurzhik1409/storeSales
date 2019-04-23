@@ -49,7 +49,7 @@
             // 
             this.loginBox.Location = new System.Drawing.Point(12, 30);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(151, 20);
+            this.loginBox.Size = new System.Drawing.Size(230, 20);
             this.loginBox.TabIndex = 1;
             // 
             // label3
@@ -66,14 +66,14 @@
             this.passwordBox.Location = new System.Drawing.Point(12, 71);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
-            this.passwordBox.Size = new System.Drawing.Size(151, 20);
+            this.passwordBox.Size = new System.Drawing.Size(230, 20);
             this.passwordBox.TabIndex = 3;
             // 
             // passButton
             // 
-            this.passButton.Location = new System.Drawing.Point(12, 98);
+            this.passButton.Location = new System.Drawing.Point(12, 97);
             this.passButton.Name = "passButton";
-            this.passButton.Size = new System.Drawing.Size(151, 23);
+            this.passButton.Size = new System.Drawing.Size(153, 23);
             this.passButton.TabIndex = 4;
             this.passButton.Text = "Вход";
             this.passButton.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // 
             this.signUp.AutoSize = true;
             this.signUp.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.signUp.Location = new System.Drawing.Point(12, 128);
+            this.signUp.Location = new System.Drawing.Point(171, 102);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(72, 13);
             this.signUp.TabIndex = 5;
@@ -94,13 +94,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(175, 153);
+            this.ClientSize = new System.Drawing.Size(254, 130);
             this.Controls.Add(this.signUp);
             this.Controls.Add(this.passButton);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AutorizationForm";
             this.Text = "Вход";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutorizationForm_FormClosing);

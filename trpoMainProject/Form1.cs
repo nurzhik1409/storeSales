@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using Excel = Microsoft.Office.Interop.Excel;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace trpoMainProject
 {
@@ -24,7 +26,7 @@ namespace trpoMainProject
             InitializeComponent();
             changeTemplateGrid();
             dbInit();
-            //autariztion();
+            autariztion();
             showTables();
         }
 
@@ -74,7 +76,7 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
                     int qty = reader.GetInt32(4);
                     DateTime date = reader.GetDateTime(5);
                     string description = reader.GetString(6);
-                    productGrid.Rows.Add(id, name, typeName, money, qty, date, description);
+                    productGrid.Rows.Add(id, name, typeName, money, qty, date.ToShortDateString(), description);
                 }
             }
 
@@ -122,7 +124,7 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
                     string address = reader.GetString(2);
                     DateTime date = reader.GetDateTime(3);
                     string phone = reader.GetString(4);
-                    clientGrid.Rows.Add(id, name, address, date, phone);
+                    clientGrid.Rows.Add(id, name, address, date.ToShortDateString(), phone);
                 }
             }
         }
@@ -141,7 +143,7 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
                     string name = reader.GetString(1);
                     DateTime date = reader.GetDateTime(2);
                     object sum = reader.GetValue(3);
-                    ordersGrid.Rows.Add(id, name, date, sum);
+                    ordersGrid.Rows.Add(id, name, date.ToShortDateString(), sum);
                 }
             }
 
@@ -301,24 +303,33 @@ Where Заказ.ОбщаяСтоимость  Between {(int)fromPriceNumeric.Va
 
         private void ordersGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idOrder = (int)ordersGrid.Rows[ordersGrid.SelectedCells[0].RowIndex].Cells[0].Value;
-            int row = ordersGrid.SelectedCells[0].RowIndex;
-            string query = $@"Select Название, КолТов, КолТов * Стоимость As Summ 
+            if (ordersGrid.Rows[ordersGrid.SelectedCells[0].RowIndex].Cells[0].Value != null)
+            {
+
+
+                int idOrder = (int)ordersGrid.Rows[ordersGrid.SelectedCells[0].RowIndex].Cells[0].Value;
+                int row = ordersGrid.SelectedCells[0].RowIndex;
+                string query = $@"Select Название, КолТов, КолТов * Стоимость As Summ 
 From ЗаказанныйТовар Inner Join Товар On ЗаказанныйТовар.КодТовара = Товар.КодТовара
 Where КодЗаказа = {idOrder}";
-            var command = new OleDbCommand(query, _conn);
-            var reader = command.ExecuteReader();
-            string message = $"Номер заказа: {ordersGrid.Rows[row].Cells[0].Value}\n" +
-                $"ФИО клиента: {ordersGrid.Rows[row].Cells[1].Value}\n" +
-                $"Дата оформления: {ordersGrid.Rows[row].Cells[2].Value}\n" +
-                $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n" +
-                $"Заказанные товары:\n";
+                var command = new OleDbCommand(query, _conn);
+                var reader = command.ExecuteReader();
+                string message = $"Номер заказа: {ordersGrid.Rows[row].Cells[0].Value}\n" +
+                    $"ФИО клиента: {ordersGrid.Rows[row].Cells[1].Value}\n" +
+                    $"Дата оформления: {ordersGrid.Rows[row].Cells[2].Value}\n" +
+                    $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n" +
+                    $"Заказанные товары:\n";
 
-            while(reader.Read())
-            {
-                message += $"{reader["Название"],-30} Количество:{reader["КолТов"],-9} Стоимость:{reader["Summ"], -9}\n";
+                while (reader.Read())
+                {
+                    message += $"{reader["Название"],-30} Количество:{reader["КолТов"],-9} Стоимость:{reader["Summ"],-9}\n";
+                }
+                MessageBox.Show(message);
             }
-            MessageBox.Show(message);
+            else
+            {
+                MessageBox.Show("Выбрана неверная строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -428,6 +439,22 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
             {
                 MessageBox.Show("Не выбрана строка");
             }
+        }
+
+        private void ВедомостьВWordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.ShowDialog();
+            string path = saveDialog.FileName;
+            var excelApp = new Excel.Application();
+            var workBook = excelApp.Workbooks.Add();
+            var workSheet = workBook.ActiveSheet;
+            workSheet.Cells[1, 1] = "Номер";
+            workSheet.Cells[1, 2] = "ФИО";
+            workSheet.Cells[1, 3] = "Дата";
+            workSheet.Cells[1, 4] = "Стоимость заказа";
+
+
         }
     }
 }

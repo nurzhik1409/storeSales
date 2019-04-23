@@ -41,8 +41,6 @@
             this.recordUpdMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.recordDelMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.docMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.docCreateMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.docEditMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsPage = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +51,21 @@
             this.addressClientClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateBirthClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberClientClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addClientPanel = new System.Windows.Forms.Panel();
+            this.addClientButton = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.phoneNumAddBox = new System.Windows.Forms.MaskedTextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.addressAddBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.sureNameAddBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.firstNameAddBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lastNameAddBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateBirthAddBox = new System.Windows.Forms.DateTimePicker();
             this.typeProductPage = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.searchTypeBox = new System.Windows.Forms.TextBox();
@@ -60,6 +73,13 @@
             this.idType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameTypeClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDisriptionClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addTypePanel = new System.Windows.Forms.Panel();
+            this.descriptionTypeAddBox = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.nameTypeAddBox = new System.Windows.Forms.TextBox();
             this.orderPage = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.toPriceNumeric = new System.Windows.Forms.NumericUpDown();
@@ -76,8 +96,10 @@
             this.sumOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tables = new System.Windows.Forms.TabControl();
             this.productPage = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.searchProductBox = new System.Windows.Forms.TextBox();
+            this.addQtyProduct = new System.Windows.Forms.Panel();
+            this.incQtyBtn = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.productGrid = new System.Windows.Forms.DataGridView();
             this.idProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameProductClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +108,10 @@
             this.qtyProductClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateProductClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionProductClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.searchProductBox = new System.Windows.Forms.TextBox();
             this.addProductPanel = new System.Windows.Forms.Panel();
+            this.priceProductAddBox = new System.Windows.Forms.MaskedTextBox();
             this.addProductBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -100,51 +125,26 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nameProductAddBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.priceProductAddBox = new System.Windows.Forms.MaskedTextBox();
-            this.addTypePanel = new System.Windows.Forms.Panel();
-            this.nameTypeAddBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.descriptionTypeAddBox = new System.Windows.Forms.RichTextBox();
-            this.addClientPanel = new System.Windows.Forms.Panel();
-            this.dateBirthAddBox = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lastNameAddBox = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.firstNameAddBox = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.sureNameAddBox = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.addressAddBox = new System.Windows.Forms.TextBox();
-            this.phoneNumAddBox = new System.Windows.Forms.MaskedTextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.addClientButton = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.addQtyProduct = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.incQtyBtn = new System.Windows.Forms.Button();
+            this.ведомостьВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ведомостьВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
+            this.addClientPanel.SuspendLayout();
             this.typeProductPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeGrid)).BeginInit();
+            this.addTypePanel.SuspendLayout();
             this.orderPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toPriceNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromPriceNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).BeginInit();
             this.tables.SuspendLayout();
             this.productPage.SuspendLayout();
+            this.addQtyProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).BeginInit();
             this.addProductPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProductAddBox)).BeginInit();
-            this.addTypePanel.SuspendLayout();
-            this.addClientPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.addQtyProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -173,14 +173,14 @@
             // fileOpenMenuBtn
             // 
             this.fileOpenMenuBtn.Name = "fileOpenMenuBtn";
-            this.fileOpenMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.fileOpenMenuBtn.Size = new System.Drawing.Size(121, 22);
             this.fileOpenMenuBtn.Text = "Открыть";
             this.fileOpenMenuBtn.Click += new System.EventHandler(this.fileOpenMenuBtn_Click);
             // 
             // fileCloseMenuBtn
             // 
             this.fileCloseMenuBtn.Name = "fileCloseMenuBtn";
-            this.fileCloseMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.fileCloseMenuBtn.Size = new System.Drawing.Size(121, 22);
             this.fileCloseMenuBtn.Text = "Закрыть";
             this.fileCloseMenuBtn.Click += new System.EventHandler(this.fileCloseMenuBtn_Click);
             // 
@@ -218,24 +218,11 @@
             // docMenuBtn
             // 
             this.docMenuBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.docCreateMenuBtn,
-            this.docEditMenuBtn});
+            this.ведомостьВWordToolStripMenuItem,
+            this.ведомостьВExcelToolStripMenuItem});
             this.docMenuBtn.Name = "docMenuBtn";
             this.docMenuBtn.Size = new System.Drawing.Size(78, 20);
             this.docMenuBtn.Text = "Ведомость";
-            // 
-            // docCreateMenuBtn
-            // 
-            this.docCreateMenuBtn.Name = "docCreateMenuBtn";
-            this.docCreateMenuBtn.Size = new System.Drawing.Size(180, 22);
-            this.docCreateMenuBtn.Text = "Создать";
-            // 
-            // docEditMenuBtn
-            // 
-            this.docEditMenuBtn.Name = "docEditMenuBtn";
-            this.docEditMenuBtn.Size = new System.Drawing.Size(180, 22);
-            this.docEditMenuBtn.Text = "Редактировать";
-            this.docEditMenuBtn.Visible = false;
             // 
             // helpMenuBtn
             // 
@@ -288,6 +275,7 @@
             this.clientGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.clientGrid.Location = new System.Drawing.Point(3, 3);
             this.clientGrid.Name = "clientGrid";
+            this.clientGrid.ReadOnly = true;
             this.clientGrid.Size = new System.Drawing.Size(634, 298);
             this.clientGrid.TabIndex = 0;
             // 
@@ -303,6 +291,7 @@
             this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle9;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
+            this.fullnameClmn.ReadOnly = true;
             this.fullnameClmn.Width = 180;
             // 
             // addressClientClmn
@@ -311,6 +300,7 @@
             this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle10;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
+            this.addressClientClmn.ReadOnly = true;
             this.addressClientClmn.Width = 150;
             // 
             // dateBirthClmn
@@ -325,7 +315,149 @@
             this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle11;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
+            this.phoneNumberClientClmn.ReadOnly = true;
             this.phoneNumberClientClmn.Width = 150;
+            // 
+            // addClientPanel
+            // 
+            this.addClientPanel.BackColor = System.Drawing.Color.LightCoral;
+            this.addClientPanel.Controls.Add(this.addClientButton);
+            this.addClientPanel.Controls.Add(this.label23);
+            this.addClientPanel.Controls.Add(this.label22);
+            this.addClientPanel.Controls.Add(this.phoneNumAddBox);
+            this.addClientPanel.Controls.Add(this.label21);
+            this.addClientPanel.Controls.Add(this.addressAddBox);
+            this.addClientPanel.Controls.Add(this.label20);
+            this.addClientPanel.Controls.Add(this.sureNameAddBox);
+            this.addClientPanel.Controls.Add(this.label19);
+            this.addClientPanel.Controls.Add(this.firstNameAddBox);
+            this.addClientPanel.Controls.Add(this.label18);
+            this.addClientPanel.Controls.Add(this.lastNameAddBox);
+            this.addClientPanel.Controls.Add(this.label17);
+            this.addClientPanel.Controls.Add(this.dateBirthAddBox);
+            this.addClientPanel.Location = new System.Drawing.Point(148, 42);
+            this.addClientPanel.Name = "addClientPanel";
+            this.addClientPanel.Size = new System.Drawing.Size(277, 179);
+            this.addClientPanel.TabIndex = 7;
+            this.addClientPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // addClientButton
+            // 
+            this.addClientButton.Location = new System.Drawing.Point(6, 154);
+            this.addClientButton.Name = "addClientButton";
+            this.addClientButton.Size = new System.Drawing.Size(261, 23);
+            this.addClientButton.TabIndex = 13;
+            this.addClientButton.Text = "Добавить";
+            this.addClientButton.UseVisualStyleBackColor = true;
+            this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(109, 111);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(52, 13);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Телефон";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(109, 67);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(86, 13);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "Дата рождения";
+            // 
+            // phoneNumAddBox
+            // 
+            this.phoneNumAddBox.Location = new System.Drawing.Point(113, 127);
+            this.phoneNumAddBox.Mask = "000000000";
+            this.phoneNumAddBox.Name = "phoneNumAddBox";
+            this.phoneNumAddBox.Size = new System.Drawing.Size(154, 20);
+            this.phoneNumAddBox.TabIndex = 10;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(109, 25);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(38, 13);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Адрес";
+            // 
+            // addressAddBox
+            // 
+            this.addressAddBox.Location = new System.Drawing.Point(112, 41);
+            this.addressAddBox.Name = "addressAddBox";
+            this.addressAddBox.Size = new System.Drawing.Size(155, 20);
+            this.addressAddBox.TabIndex = 8;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 111);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(54, 13);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "Отчество";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // sureNameAddBox
+            // 
+            this.sureNameAddBox.Location = new System.Drawing.Point(6, 127);
+            this.sureNameAddBox.Name = "sureNameAddBox";
+            this.sureNameAddBox.Size = new System.Drawing.Size(100, 20);
+            this.sureNameAddBox.TabIndex = 6;
+            this.sureNameAddBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 67);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(29, 13);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Имя";
+            // 
+            // firstNameAddBox
+            // 
+            this.firstNameAddBox.Location = new System.Drawing.Point(6, 83);
+            this.firstNameAddBox.Name = "firstNameAddBox";
+            this.firstNameAddBox.Size = new System.Drawing.Size(100, 20);
+            this.firstNameAddBox.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Фамилия";
+            // 
+            // lastNameAddBox
+            // 
+            this.lastNameAddBox.Location = new System.Drawing.Point(6, 41);
+            this.lastNameAddBox.Name = "lastNameAddBox";
+            this.lastNameAddBox.Size = new System.Drawing.Size(100, 20);
+            this.lastNameAddBox.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Добавить клиента";
+            // 
+            // dateBirthAddBox
+            // 
+            this.dateBirthAddBox.Location = new System.Drawing.Point(112, 83);
+            this.dateBirthAddBox.Name = "dateBirthAddBox";
+            this.dateBirthAddBox.Size = new System.Drawing.Size(155, 20);
+            this.dateBirthAddBox.TabIndex = 0;
             // 
             // typeProductPage
             // 
@@ -368,6 +500,7 @@
             this.typeGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.typeGrid.Location = new System.Drawing.Point(3, 3);
             this.typeGrid.Name = "typeGrid";
+            this.typeGrid.ReadOnly = true;
             this.typeGrid.Size = new System.Drawing.Size(540, 298);
             this.typeGrid.TabIndex = 0;
             // 
@@ -389,6 +522,72 @@
             this.typeDisriptionClmn.HeaderText = "Описание типа";
             this.typeDisriptionClmn.Name = "typeDisriptionClmn";
             this.typeDisriptionClmn.Width = 300;
+            // 
+            // addTypePanel
+            // 
+            this.addTypePanel.BackColor = System.Drawing.Color.Thistle;
+            this.addTypePanel.Controls.Add(this.descriptionTypeAddBox);
+            this.addTypePanel.Controls.Add(this.button1);
+            this.addTypePanel.Controls.Add(this.label16);
+            this.addTypePanel.Controls.Add(this.label15);
+            this.addTypePanel.Controls.Add(this.label14);
+            this.addTypePanel.Controls.Add(this.nameTypeAddBox);
+            this.addTypePanel.Location = new System.Drawing.Point(207, 43);
+            this.addTypePanel.Name = "addTypePanel";
+            this.addTypePanel.Size = new System.Drawing.Size(214, 182);
+            this.addTypePanel.TabIndex = 5;
+            // 
+            // descriptionTypeAddBox
+            // 
+            this.descriptionTypeAddBox.Location = new System.Drawing.Point(6, 76);
+            this.descriptionTypeAddBox.Name = "descriptionTypeAddBox";
+            this.descriptionTypeAddBox.Size = new System.Drawing.Size(203, 74);
+            this.descriptionTypeAddBox.TabIndex = 6;
+            this.descriptionTypeAddBox.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(203, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 59);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Описание вида";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Название вида";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Добавить вид";
+            // 
+            // nameTypeAddBox
+            // 
+            this.nameTypeAddBox.Location = new System.Drawing.Point(6, 36);
+            this.nameTypeAddBox.Name = "nameTypeAddBox";
+            this.nameTypeAddBox.Size = new System.Drawing.Size(203, 20);
+            this.nameTypeAddBox.TabIndex = 0;
             // 
             // orderPage
             // 
@@ -497,6 +696,7 @@
             this.ordersGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.ordersGrid.Location = new System.Drawing.Point(3, 3);
             this.ordersGrid.Name = "ordersGrid";
+            this.ordersGrid.ReadOnly = true;
             this.ordersGrid.Size = new System.Drawing.Size(584, 298);
             this.ordersGrid.TabIndex = 0;
             this.ordersGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -552,23 +752,52 @@
             this.productPage.Text = "Товары";
             this.productPage.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // addQtyProduct
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(648, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Поиск";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.addQtyProduct.BackColor = System.Drawing.Color.Gainsboro;
+            this.addQtyProduct.Controls.Add(this.incQtyBtn);
+            this.addQtyProduct.Controls.Add(this.label24);
+            this.addQtyProduct.Controls.Add(this.numericUpDown1);
+            this.addQtyProduct.Location = new System.Drawing.Point(651, 51);
+            this.addQtyProduct.Name = "addQtyProduct";
+            this.addQtyProduct.Size = new System.Drawing.Size(126, 73);
+            this.addQtyProduct.TabIndex = 5;
             // 
-            // searchProductBox
+            // incQtyBtn
             // 
-            this.searchProductBox.Location = new System.Drawing.Point(651, 20);
-            this.searchProductBox.Name = "searchProductBox";
-            this.searchProductBox.Size = new System.Drawing.Size(117, 20);
-            this.searchProductBox.TabIndex = 1;
-            this.searchProductBox.TextChanged += new System.EventHandler(this.searchProductBox_TextChanged);
+            this.incQtyBtn.Location = new System.Drawing.Point(1, 47);
+            this.incQtyBtn.Name = "incQtyBtn";
+            this.incQtyBtn.Size = new System.Drawing.Size(119, 23);
+            this.incQtyBtn.TabIndex = 6;
+            this.incQtyBtn.Text = "Добавить";
+            this.incQtyBtn.UseVisualStyleBackColor = true;
+            this.incQtyBtn.Click += new System.EventHandler(this.incQtyBtn_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(-3, 4);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 13);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Добавить товар а склад";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(0, 20);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 4;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // productGrid
             // 
@@ -584,6 +813,7 @@
             this.productGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.productGrid.Location = new System.Drawing.Point(3, 3);
             this.productGrid.Name = "productGrid";
+            this.productGrid.ReadOnly = true;
             this.productGrid.Size = new System.Drawing.Size(642, 298);
             this.productGrid.TabIndex = 0;
             // 
@@ -628,7 +858,26 @@
             this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle12;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
+            this.descriptionProductClmn.ReadOnly = true;
             this.descriptionProductClmn.Width = 150;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(648, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Поиск";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // searchProductBox
+            // 
+            this.searchProductBox.Location = new System.Drawing.Point(651, 20);
+            this.searchProductBox.Name = "searchProductBox";
+            this.searchProductBox.Size = new System.Drawing.Size(117, 20);
+            this.searchProductBox.TabIndex = 1;
+            this.searchProductBox.TextChanged += new System.EventHandler(this.searchProductBox_TextChanged);
             // 
             // addProductPanel
             // 
@@ -651,6 +900,15 @@
             this.addProductPanel.Name = "addProductPanel";
             this.addProductPanel.Size = new System.Drawing.Size(352, 231);
             this.addProductPanel.TabIndex = 3;
+            // 
+            // priceProductAddBox
+            // 
+            this.priceProductAddBox.Location = new System.Drawing.Point(6, 127);
+            this.priceProductAddBox.Mask = "00000";
+            this.priceProductAddBox.Name = "priceProductAddBox";
+            this.priceProductAddBox.Size = new System.Drawing.Size(121, 20);
+            this.priceProductAddBox.TabIndex = 14;
+            this.priceProductAddBox.ValidatingType = typeof(int);
             // 
             // addProductBtn
             // 
@@ -763,268 +1021,18 @@
             this.label7.Text = "Добавить товар";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // priceProductAddBox
+            // ведомостьВWordToolStripMenuItem
             // 
-            this.priceProductAddBox.Location = new System.Drawing.Point(6, 127);
-            this.priceProductAddBox.Mask = "00000";
-            this.priceProductAddBox.Name = "priceProductAddBox";
-            this.priceProductAddBox.Size = new System.Drawing.Size(121, 20);
-            this.priceProductAddBox.TabIndex = 14;
-            this.priceProductAddBox.ValidatingType = typeof(int);
+            this.ведомостьВWordToolStripMenuItem.Name = "ведомостьВWordToolStripMenuItem";
+            this.ведомостьВWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ведомостьВWordToolStripMenuItem.Text = "Ведомость в word";
+            this.ведомостьВWordToolStripMenuItem.Click += new System.EventHandler(this.ВедомостьВWordToolStripMenuItem_Click);
             // 
-            // addTypePanel
+            // ведомостьВExcelToolStripMenuItem
             // 
-            this.addTypePanel.BackColor = System.Drawing.Color.Thistle;
-            this.addTypePanel.Controls.Add(this.descriptionTypeAddBox);
-            this.addTypePanel.Controls.Add(this.button1);
-            this.addTypePanel.Controls.Add(this.label16);
-            this.addTypePanel.Controls.Add(this.label15);
-            this.addTypePanel.Controls.Add(this.label14);
-            this.addTypePanel.Controls.Add(this.nameTypeAddBox);
-            this.addTypePanel.Location = new System.Drawing.Point(207, 43);
-            this.addTypePanel.Name = "addTypePanel";
-            this.addTypePanel.Size = new System.Drawing.Size(214, 182);
-            this.addTypePanel.TabIndex = 5;
-            // 
-            // nameTypeAddBox
-            // 
-            this.nameTypeAddBox.Location = new System.Drawing.Point(6, 36);
-            this.nameTypeAddBox.Name = "nameTypeAddBox";
-            this.nameTypeAddBox.Size = new System.Drawing.Size(203, 20);
-            this.nameTypeAddBox.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 13);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Добавить вид";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 13);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Название вида";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 59);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 13);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Описание вида";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 156);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // descriptionTypeAddBox
-            // 
-            this.descriptionTypeAddBox.Location = new System.Drawing.Point(6, 76);
-            this.descriptionTypeAddBox.Name = "descriptionTypeAddBox";
-            this.descriptionTypeAddBox.Size = new System.Drawing.Size(203, 74);
-            this.descriptionTypeAddBox.TabIndex = 6;
-            this.descriptionTypeAddBox.Text = "";
-            // 
-            // addClientPanel
-            // 
-            this.addClientPanel.BackColor = System.Drawing.Color.LightCoral;
-            this.addClientPanel.Controls.Add(this.addClientButton);
-            this.addClientPanel.Controls.Add(this.label23);
-            this.addClientPanel.Controls.Add(this.label22);
-            this.addClientPanel.Controls.Add(this.phoneNumAddBox);
-            this.addClientPanel.Controls.Add(this.label21);
-            this.addClientPanel.Controls.Add(this.addressAddBox);
-            this.addClientPanel.Controls.Add(this.label20);
-            this.addClientPanel.Controls.Add(this.sureNameAddBox);
-            this.addClientPanel.Controls.Add(this.label19);
-            this.addClientPanel.Controls.Add(this.firstNameAddBox);
-            this.addClientPanel.Controls.Add(this.label18);
-            this.addClientPanel.Controls.Add(this.lastNameAddBox);
-            this.addClientPanel.Controls.Add(this.label17);
-            this.addClientPanel.Controls.Add(this.dateBirthAddBox);
-            this.addClientPanel.Location = new System.Drawing.Point(148, 42);
-            this.addClientPanel.Name = "addClientPanel";
-            this.addClientPanel.Size = new System.Drawing.Size(277, 179);
-            this.addClientPanel.TabIndex = 7;
-            this.addClientPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // dateBirthAddBox
-            // 
-            this.dateBirthAddBox.Location = new System.Drawing.Point(112, 83);
-            this.dateBirthAddBox.Name = "dateBirthAddBox";
-            this.dateBirthAddBox.Size = new System.Drawing.Size(155, 20);
-            this.dateBirthAddBox.TabIndex = 0;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(101, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Добавить клиента";
-            // 
-            // lastNameAddBox
-            // 
-            this.lastNameAddBox.Location = new System.Drawing.Point(6, 41);
-            this.lastNameAddBox.Name = "lastNameAddBox";
-            this.lastNameAddBox.Size = new System.Drawing.Size(100, 20);
-            this.lastNameAddBox.TabIndex = 2;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 13);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Фамилия";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(3, 67);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(29, 13);
-            this.label19.TabIndex = 5;
-            this.label19.Text = "Имя";
-            // 
-            // firstNameAddBox
-            // 
-            this.firstNameAddBox.Location = new System.Drawing.Point(6, 83);
-            this.firstNameAddBox.Name = "firstNameAddBox";
-            this.firstNameAddBox.Size = new System.Drawing.Size(100, 20);
-            this.firstNameAddBox.TabIndex = 4;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 111);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(54, 13);
-            this.label20.TabIndex = 7;
-            this.label20.Text = "Отчество";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
-            // 
-            // sureNameAddBox
-            // 
-            this.sureNameAddBox.Location = new System.Drawing.Point(6, 127);
-            this.sureNameAddBox.Name = "sureNameAddBox";
-            this.sureNameAddBox.Size = new System.Drawing.Size(100, 20);
-            this.sureNameAddBox.TabIndex = 6;
-            this.sureNameAddBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(109, 25);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(38, 13);
-            this.label21.TabIndex = 9;
-            this.label21.Text = "Адрес";
-            // 
-            // addressAddBox
-            // 
-            this.addressAddBox.Location = new System.Drawing.Point(112, 41);
-            this.addressAddBox.Name = "addressAddBox";
-            this.addressAddBox.Size = new System.Drawing.Size(155, 20);
-            this.addressAddBox.TabIndex = 8;
-            // 
-            // phoneNumAddBox
-            // 
-            this.phoneNumAddBox.Location = new System.Drawing.Point(113, 127);
-            this.phoneNumAddBox.Mask = "000000000";
-            this.phoneNumAddBox.Name = "phoneNumAddBox";
-            this.phoneNumAddBox.Size = new System.Drawing.Size(154, 20);
-            this.phoneNumAddBox.TabIndex = 10;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(109, 67);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 13);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "Дата рождения";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(109, 111);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(52, 13);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "Телефон";
-            // 
-            // addClientButton
-            // 
-            this.addClientButton.Location = new System.Drawing.Point(6, 154);
-            this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(261, 23);
-            this.addClientButton.TabIndex = 13;
-            this.addClientButton.Text = "Добавить";
-            this.addClientButton.UseVisualStyleBackColor = true;
-            this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(0, 20);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 4;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // addQtyProduct
-            // 
-            this.addQtyProduct.BackColor = System.Drawing.Color.Gainsboro;
-            this.addQtyProduct.Controls.Add(this.incQtyBtn);
-            this.addQtyProduct.Controls.Add(this.label24);
-            this.addQtyProduct.Controls.Add(this.numericUpDown1);
-            this.addQtyProduct.Location = new System.Drawing.Point(651, 51);
-            this.addQtyProduct.Name = "addQtyProduct";
-            this.addQtyProduct.Size = new System.Drawing.Size(126, 73);
-            this.addQtyProduct.TabIndex = 5;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(-3, 4);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 13);
-            this.label24.TabIndex = 5;
-            this.label24.Text = "Добавить товар а склад";
-            // 
-            // incQtyBtn
-            // 
-            this.incQtyBtn.Location = new System.Drawing.Point(1, 47);
-            this.incQtyBtn.Name = "incQtyBtn";
-            this.incQtyBtn.Size = new System.Drawing.Size(119, 23);
-            this.incQtyBtn.TabIndex = 6;
-            this.incQtyBtn.Text = "Добавить";
-            this.incQtyBtn.UseVisualStyleBackColor = true;
-            this.incQtyBtn.Click += new System.EventHandler(this.incQtyBtn_Click);
+            this.ведомостьВExcelToolStripMenuItem.Name = "ведомостьВExcelToolStripMenuItem";
+            this.ведомостьВExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ведомостьВExcelToolStripMenuItem.Text = "Ведомость в excel";
             // 
             // MainForm
             // 
@@ -1044,9 +1052,13 @@
             this.clientsPage.ResumeLayout(false);
             this.clientsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).EndInit();
+            this.addClientPanel.ResumeLayout(false);
+            this.addClientPanel.PerformLayout();
             this.typeProductPage.ResumeLayout(false);
             this.typeProductPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeGrid)).EndInit();
+            this.addTypePanel.ResumeLayout(false);
+            this.addTypePanel.PerformLayout();
             this.orderPage.ResumeLayout(false);
             this.orderPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toPriceNumeric)).EndInit();
@@ -1055,17 +1067,13 @@
             this.tables.ResumeLayout(false);
             this.productPage.ResumeLayout(false);
             this.productPage.PerformLayout();
+            this.addQtyProduct.ResumeLayout(false);
+            this.addQtyProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).EndInit();
             this.addProductPanel.ResumeLayout(false);
             this.addProductPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProductAddBox)).EndInit();
-            this.addTypePanel.ResumeLayout(false);
-            this.addTypePanel.PerformLayout();
-            this.addClientPanel.ResumeLayout(false);
-            this.addClientPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.addQtyProduct.ResumeLayout(false);
-            this.addQtyProduct.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1081,8 +1089,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileOpenMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem fileCloseMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem docMenuBtn;
-        private System.Windows.Forms.ToolStripMenuItem docCreateMenuBtn;
-        private System.Windows.Forms.ToolStripMenuItem docEditMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem helpMenuBtn;
         private System.Windows.Forms.TabPage clientsPage;
         private System.Windows.Forms.TabPage typeProductPage;
@@ -1167,6 +1173,8 @@
         private System.Windows.Forms.Button incQtyBtn;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ToolStripMenuItem ведомостьВWordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ведомостьВExcelToolStripMenuItem;
     }
 }
 
