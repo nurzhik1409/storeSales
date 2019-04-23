@@ -1,0 +1,14 @@
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\bin\Debug\trpoMainProject.exe.config
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\bin\Debug\trpoMainProject.exe
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\bin\Debug\trpoMainProject.pdb
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.csprojAssemblyReference.cache
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.MainForm.resources
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.Properties.Resources.resources
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.csproj.GenerateResource.cache
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.csproj.CoreCompileInputs.cache
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.exe
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.pdb
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\bin\Debug\PCShop1.accdb
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.AutorizationForm.resources
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.RegistrationForm.resources
+C:\Users\rol1t\source\repos\trpoMainProject\trpoMainProject\obj\Debug\trpoMainProject.AddOrder.resources
