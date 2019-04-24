@@ -11,8 +11,8 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
-using System.Diagnostics;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace trpoMainProject
 {
@@ -133,7 +133,7 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
 
         private void showOrders()
         {
-            string query = "Select КодЗаказа, Фамилия & ' ' & Имя As ФИО, ДатаОформления, ОбщаяСтоимость From  Заказ Inner Join Покупатель On Покупатель.КодПокупателя = Заказ.КодПокупателя ";
+            string query = "Select КодЗаказа, Фамилия & ' ' & Имя & ' ' & Отчество As ФИО, ДатаОформления, ОбщаяСтоимость From  Заказ Inner Join Покупатель On Покупатель.КодПокупателя = Заказ.КодПокупателя ";
             OleDbCommand com = new OleDbCommand(query, _conn);
             var reader = com.ExecuteReader();
             if (reader.HasRows)
@@ -449,15 +449,41 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 
         private void ВедомостьВWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Task.Run(() =>
+            SaveFileDialog save = new SaveFileDialog();
+            save.DefaultExt = ".docx";
+            save.AddExtension = true;
+            save.ShowDialog();
+            if (save.FileName != "")
             {
-                var wordApp = new Word.Application();
-                var wordDocument = wordApp.Documents.Add(System.Reflection.Missing.Value, System.Reflection.Missing.Value, System.Reflection.Missing.Value);
-                var tableRange = wordDocument.Range();
-                tableRange.Tables.Add(tableRange, ordersGrid.ColumnCount + 1, 4);
-                tableRange.Tables[1].Cell(1, 1);
-                wordApp.Visible = true;
-            });
+               Task.Run(() =>
+               {
+                   var wordApp = new Word.Application();
+                   Word.Document wordDoc = wordApp.Documents.Add(System.Reflection.Missing.Value, 
+                       System.Reflection.Missing.Value, System.Reflection.Missing.Value);
+                   int idOrder = (int)ordersGrid.Rows[ordersGrid.SelectedCells[0].RowIndex].Cells[0].Value;
+                   int row = ordersGrid.SelectedCells[0].RowIndex;
+                   string query = $@"Select Название, КолТов, КолТов * Стоимость As Summ 
+From ЗаказанныйТовар Inner Join Товар On ЗаказанныйТовар.КодТовара = Товар.КодТовара
+Where КодЗаказа = {idOrder}";
+                   var command = new OleDbCommand(query, _conn);
+                   var reader = command.ExecuteReader();
+                   string message = $"Номер заказа: {ordersGrid.Rows[row].Cells[0].Value}\n" +
+                       $"ФИО клиента: {ordersGrid.Rows[row].Cells[1].Value}\n" +
+                       $"Дата оформления: {ordersGrid.Rows[row].Cells[2].Value}\n" +
+                       $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n" +
+                       $"Заказанные товары:\n";
+
+                   while (reader.Read())
+                   {
+                       message += $"|{reader["Название"],-50}|" + $"{"Кол-во:" + reader["КолТов"],-15}" + $"{"Сум:" + reader["Summ"],-10}\n";
+                   }
+                   wordDoc.Range().Text = message;
+                   object path = save.FileName;
+                   wordDoc.SaveAs2(ref path);
+                   wordDoc.Close();
+                   System.Diagnostics.Process.Start(fileName: save.FileName);
+               });
+            }
             
         }
 
@@ -489,14 +515,17 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 
         private void ВедомостьВExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.AddExtension = true;
             saveDialog.DefaultExt = ".xlsx";
             saveDialog.ShowDialog();
-            Task.Run(() =>
+            string path = saveDialog.FileName;
+            if (saveDialog.FileName == "")
             {
-                string path = saveDialog.FileName;
+                return;
+            }
+            Task.Run(() =>
+           {
                var excelApp = new Excel.Application();
                var workBook = excelApp.Workbooks.Add();
                Excel.Worksheet workSheet = workBook.ActiveSheet;
@@ -513,7 +542,7 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
                    workSheet.Cells[i + 2, 1] = ordersGrid[0, i].Value;
                    workSheet.Cells[i + 2, 2] = ordersGrid[1, i].Value;
                    workSheet.Cells[i + 2, 3] = ordersGrid[2, i].Value;
-                   workSheet.Cells[i + 2, 4] = ordersGrid[3, i].Value;
+                   workSheet.Cells[i + 2, 4] = ordersGrid[0, i].Value;
                }
                var rng = workSheet.Range[$"D{ordersGrid.Rows.Count + 1}"];
                rng.Formula = $"=SUM(D2:D{ordersGrid.Rows.Count})";
@@ -523,7 +552,6 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
                workBook.Close();
                System.Diagnostics.Process.Start(path);
            });
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
