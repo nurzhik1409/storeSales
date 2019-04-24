@@ -133,7 +133,7 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
 
         private void showOrders()
         {
-            string query = "Select КодЗаказа, Фамилия & ' ' & Имя As ФИО, ДатаОформления, ОбщаяСтоимость From  Заказ Inner Join Покупатель On Покупатель.КодПокупателя = Заказ.КодПокупателя ";
+            string query = "Select КодЗаказа, Фамилия & ' ' & Имя & ' ' & Отчество As ФИО, ДатаОформления, ОбщаяСтоимость From  Заказ Inner Join Покупатель On Покупатель.КодПокупателя = Заказ.КодПокупателя ";
             OleDbCommand com = new OleDbCommand(query, _conn);
             var reader = com.ExecuteReader();
             if (reader.HasRows)
