@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace trpoMainProject
 {
@@ -448,6 +449,15 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 
         private void ВедомостьВWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Task.Run(() =>
+            {
+                var wordApp = new Word.Application();
+                var wordDocument = wordApp.Documents.Add(System.Reflection.Missing.Value, System.Reflection.Missing.Value, System.Reflection.Missing.Value);
+                var tableRange = wordDocument.Range();
+                tableRange.Tables.Add(tableRange, ordersGrid.ColumnCount + 1, 4);
+                tableRange.Tables[1].Cell(1, 1);
+                wordApp.Visible = true;
+            });
             
         }
 
@@ -479,36 +489,40 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 
         private void ВедомостьВExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.AddExtension = true;
             saveDialog.DefaultExt = ".xlsx";
             saveDialog.ShowDialog();
-            string path = saveDialog.FileName;
-            var excelApp = new Excel.Application();
-            var workBook = excelApp.Workbooks.Add();
-            Excel.Worksheet workSheet = workBook.ActiveSheet;
-            workSheet.Cells[1, 1] = "Номер";
-            workSheet.Columns[1].ColumnWidth = 6;
-            workSheet.Cells[1, 2] = "ФИО";
-            workSheet.Columns[2].ColumnWidth = 20;
-            workSheet.Cells[1, 3] = "Дата";
-            workSheet.Columns[3].ColumnWidth = 10;
-            workSheet.Cells[1, 4] = "Стоимость заказа";
-            workSheet.Columns[4].ColumnWidth = 25;
-            for (int i = 0; i < ordersGrid.Rows.Count; i++)
+            Task.Run(() =>
             {
-                workSheet.Cells[i + 2, 1] = ordersGrid[0, i].Value;
-                workSheet.Cells[i + 2, 2] = ordersGrid[1, i].Value;
-                workSheet.Cells[i + 2, 3] = ordersGrid[2, i].Value;
-                workSheet.Cells[i + 2, 4] = ordersGrid[0, i].Value;
-            }
-            var rng = workSheet.Range[$"D{ordersGrid.Rows.Count + 1}"];
-            rng.Formula = $"=SUM(D2:D{ordersGrid.Rows.Count})";
-            workSheet.Range[$"C{ordersGrid.Rows.Count + 1}"].Value = "Итого:";
-            rng.FormulaHidden = false;
-            workBook.SaveAs(path);
-            workBook.Close();
-            System.Diagnostics.Process.Start(path);
+                string path = saveDialog.FileName;
+               var excelApp = new Excel.Application();
+               var workBook = excelApp.Workbooks.Add();
+               Excel.Worksheet workSheet = workBook.ActiveSheet;
+               workSheet.Cells[1, 1] = "Номер";
+               workSheet.Columns[1].ColumnWidth = 6;
+               workSheet.Cells[1, 2] = "ФИО";
+               workSheet.Columns[2].ColumnWidth = 20;
+               workSheet.Cells[1, 3] = "Дата";
+               workSheet.Columns[3].ColumnWidth = 10;
+               workSheet.Cells[1, 4] = "Стоимость заказа";
+               workSheet.Columns[4].ColumnWidth = 25;
+               for (int i = 0; i < ordersGrid.Rows.Count; i++)
+               {
+                   workSheet.Cells[i + 2, 1] = ordersGrid[0, i].Value;
+                   workSheet.Cells[i + 2, 2] = ordersGrid[1, i].Value;
+                   workSheet.Cells[i + 2, 3] = ordersGrid[2, i].Value;
+                   workSheet.Cells[i + 2, 4] = ordersGrid[3, i].Value;
+               }
+               var rng = workSheet.Range[$"D{ordersGrid.Rows.Count + 1}"];
+               rng.Formula = $"=SUM(D2:D{ordersGrid.Rows.Count})";
+               workSheet.Range[$"C{ordersGrid.Rows.Count + 1}"].Value = "Итого:";
+               rng.FormulaHidden = false;
+               workBook.SaveAs(path);
+               workBook.Close();
+               System.Diagnostics.Process.Start(path);
+           });
 
         }
 
