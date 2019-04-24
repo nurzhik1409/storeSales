@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
+using System.Reflection;
 using System.Diagnostics;
 
 namespace trpoMainProject
@@ -448,6 +449,41 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 
         private void ВедомостьВWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveFileDialog save = new SaveFileDialog();
+            save.DefaultExt = ".docx";
+            save.AddExtension = true;
+            save.ShowDialog();
+            if (save.FileName != "")
+            {
+               Task.Run(() =>
+               {
+                   var wordApp = new Word.Application();
+                   Word.Document wordDoc = wordApp.Documents.Add(System.Reflection.Missing.Value, 
+                       System.Reflection.Missing.Value, System.Reflection.Missing.Value);
+                   int idOrder = (int)ordersGrid.Rows[ordersGrid.SelectedCells[0].RowIndex].Cells[0].Value;
+                   int row = ordersGrid.SelectedCells[0].RowIndex;
+                   string query = $@"Select Название, КолТов, КолТов * Стоимость As Summ 
+From ЗаказанныйТовар Inner Join Товар On ЗаказанныйТовар.КодТовара = Товар.КодТовара
+Where КодЗаказа = {idOrder}";
+                   var command = new OleDbCommand(query, _conn);
+                   var reader = command.ExecuteReader();
+                   string message = $"Номер заказа: {ordersGrid.Rows[row].Cells[0].Value}\n" +
+                       $"ФИО клиента: {ordersGrid.Rows[row].Cells[1].Value}\n" +
+                       $"Дата оформления: {ordersGrid.Rows[row].Cells[2].Value}\n" +
+                       $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n" +
+                       $"Заказанные товары:\n";
+
+                   while (reader.Read())
+                   {
+                       message += $"|{reader["Название"],-50}|" + $"{"Кол-во:" + reader["КолТов"],-15}" + $"{"Сум:" + reader["Summ"],-10}\n";
+                   }
+                   wordDoc.Range().Text = message;
+                   object path = save.FileName;
+                   wordDoc.SaveAs2(ref path);
+                   wordDoc.Close();
+                   System.Diagnostics.Process.Start(fileName: save.FileName);
+               });
+            }
             
         }
 
