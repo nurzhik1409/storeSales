@@ -5,3 +5,5 @@
 /.vs/trpoMainProject/v16
 /trpoMainProject/bin/Debug
 /trpoMainProject/obj/Debug
+/.vs
+/trpoMainProject/obj/Release

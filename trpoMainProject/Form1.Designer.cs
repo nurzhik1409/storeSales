@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileOpenMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCloseMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.recordMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.recordAddMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +82,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.nameTypeAddBox = new System.Windows.Forms.TextBox();
             this.orderPage = new System.Windows.Forms.TabPage();
+            this.resetOrderGrid = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.toPriceNumeric = new System.Windows.Forms.NumericUpDown();
             this.fromPriceNumeric = new System.Windows.Forms.NumericUpDown();
@@ -127,11 +131,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nameProductAddBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateFrom = new System.Windows.Forms.DateTimePicker();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.dateTo = new System.Windows.Forms.DateTimePicker();
-            this.resetOrderGrid = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -169,23 +168,15 @@
             // fileMenuBtn
             // 
             this.fileMenuBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileOpenMenuBtn,
             this.fileCloseMenuBtn});
             this.fileMenuBtn.Name = "fileMenuBtn";
             this.fileMenuBtn.Size = new System.Drawing.Size(48, 20);
             this.fileMenuBtn.Text = "Файл";
             // 
-            // fileOpenMenuBtn
-            // 
-            this.fileOpenMenuBtn.Name = "fileOpenMenuBtn";
-            this.fileOpenMenuBtn.Size = new System.Drawing.Size(121, 22);
-            this.fileOpenMenuBtn.Text = "Открыть";
-            this.fileOpenMenuBtn.Click += new System.EventHandler(this.fileOpenMenuBtn_Click);
-            // 
             // fileCloseMenuBtn
             // 
             this.fileCloseMenuBtn.Name = "fileCloseMenuBtn";
-            this.fileCloseMenuBtn.Size = new System.Drawing.Size(121, 22);
+            this.fileCloseMenuBtn.Size = new System.Drawing.Size(180, 22);
             this.fileCloseMenuBtn.Text = "Закрыть";
             this.fileCloseMenuBtn.Click += new System.EventHandler(this.fileCloseMenuBtn_Click);
             // 
@@ -638,6 +629,48 @@
             this.orderPage.UseVisualStyleBackColor = true;
             this.orderPage.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // resetOrderGrid
+            // 
+            this.resetOrderGrid.Location = new System.Drawing.Point(592, 275);
+            this.resetOrderGrid.Name = "resetOrderGrid";
+            this.resetOrderGrid.Size = new System.Drawing.Size(64, 23);
+            this.resetOrderGrid.TabIndex = 13;
+            this.resetOrderGrid.Text = "Сбросить";
+            this.resetOrderGrid.UseVisualStyleBackColor = true;
+            this.resetOrderGrid.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(590, 154);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(111, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Дата конца периода";
+            // 
+            // dateTo
+            // 
+            this.dateTo.Location = new System.Drawing.Point(592, 170);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(176, 20);
+            this.dateTo.TabIndex = 11;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(590, 115);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(116, 13);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "Дата начала периода";
+            // 
+            // dateFrom
+            // 
+            this.dateFrom.Location = new System.Drawing.Point(592, 131);
+            this.dateFrom.Name = "dateFrom";
+            this.dateFrom.Size = new System.Drawing.Size(176, 20);
+            this.dateFrom.TabIndex = 9;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1064,48 +1097,6 @@
             this.label7.Text = "Добавить товар";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // dateFrom
-            // 
-            this.dateFrom.Location = new System.Drawing.Point(592, 131);
-            this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(176, 20);
-            this.dateFrom.TabIndex = 9;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(590, 115);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(116, 13);
-            this.label25.TabIndex = 10;
-            this.label25.Text = "Дата начала периода";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(590, 154);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(111, 13);
-            this.label26.TabIndex = 12;
-            this.label26.Text = "Дата конца периода";
-            // 
-            // dateTo
-            // 
-            this.dateTo.Location = new System.Drawing.Point(592, 170);
-            this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(176, 20);
-            this.dateTo.TabIndex = 11;
-            // 
-            // resetOrderGrid
-            // 
-            this.resetOrderGrid.Location = new System.Drawing.Point(592, 275);
-            this.resetOrderGrid.Name = "resetOrderGrid";
-            this.resetOrderGrid.Size = new System.Drawing.Size(64, 23);
-            this.resetOrderGrid.TabIndex = 13;
-            this.resetOrderGrid.Text = "Сбросить";
-            this.resetOrderGrid.UseVisualStyleBackColor = true;
-            this.resetOrderGrid.Click += new System.EventHandler(this.Button2_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1158,7 +1149,6 @@
         private System.Windows.Forms.ToolStripMenuItem recordAddMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem recordUpdMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem recordDelMenuBtn;
-        private System.Windows.Forms.ToolStripMenuItem fileOpenMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem fileCloseMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem docMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem helpMenuBtn;
