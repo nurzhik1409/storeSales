@@ -345,6 +345,13 @@ Where КодЗаказа = {idOrder}";
 
         private void addProductBtn_Click(object sender, EventArgs e)
         {
+            if (nameProductAddBox.Text == "" ||
+                typeProductAddBox.Text == "" ||
+                priceProductAddBox.Text == "")
+            {
+                MessageBox.Show("Заполните поля корректно!");
+                return;
+            }
             string query = $@"Insert Into Товар(Название, КодВида, Стоимость, КолНаСкл, ГодПроизв, Описание)
 Values ('{nameProductAddBox.Text}', {typeProductAddBox.SelectedValue}, {priceProductAddBox.Text}, {qtyProductAddBox.Value}, '{dateAddProduct.Value}', '{descriptionAddBox.Text}')";
             OleDbCommand command = new OleDbCommand(query, _conn);
@@ -361,6 +368,11 @@ Values ('{nameProductAddBox.Text}', {typeProductAddBox.SelectedValue}, {pricePro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (nameTypeAddBox.Text == "")
+            {
+                MessageBox.Show("Заполните название вида!");
+                return;
+            }
             string query = $@"Insert Into ВидТовара(НазваниеВида, СфераПрименения)
 Values ('{nameTypeAddBox.Text}', '{descriptionAddBox.Text}')";
             OleDbCommand command = new OleDbCommand(query, _conn);
@@ -386,6 +398,14 @@ Values ('{nameTypeAddBox.Text}', '{descriptionAddBox.Text}')";
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
+            if (lastNameAddBox.Text == "" ||
+                firstNameAddBox.Text == "" ||
+                sureNameAddBox.Text == "" ||
+                addressAddBox.Text == "" ||
+                phoneNumAddBox.Text == "")
+            {
+                MessageBox.Show("Заполните все поля");
+            }
             string query = $@"Insert Into Покупатель(Фамилия, Имя, Отчество, Адрес, ДатаРождения, Телефон)
 Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text}', '{addressAddBox.Text}','{dateBirthAddBox.Value.ToShortDateString()}', '{phoneNumAddBox.Text}')";
             OleDbCommand command = new OleDbCommand(query, _conn);
@@ -542,7 +562,7 @@ Where КодЗаказа = {idOrder}";
                    workSheet.Cells[i + 2, 1] = ordersGrid[0, i].Value;
                    workSheet.Cells[i + 2, 2] = ordersGrid[1, i].Value;
                    workSheet.Cells[i + 2, 3] = ordersGrid[2, i].Value;
-                   workSheet.Cells[i + 2, 4] = ordersGrid[0, i].Value;
+                   workSheet.Cells[i + 2, 4] = ordersGrid[3, i].Value;
                }
                var rng = workSheet.Range[$"D{ordersGrid.Rows.Count + 1}"];
                rng.Formula = $"=SUM(D2:D{ordersGrid.Rows.Count})";
@@ -557,6 +577,21 @@ Where КодЗаказа = {idOrder}";
         private void Button2_Click(object sender, EventArgs e)
         {
             showOrders();
+        }
+
+        private void ExitAddPanelProductBtn_Click(object sender, EventArgs e)
+        {
+            addTypePanel.SendToBack();
+        }
+
+        private void ExitAddProductPanel_Click(object sender, EventArgs e)
+        {
+            addProductPanel.SendToBack();
+        }
+
+        private void ExitAddClientPanelBtn_Click(object sender, EventArgs e)
+        {
+            addClientPanel.SendToBack();
         }
     }
 }

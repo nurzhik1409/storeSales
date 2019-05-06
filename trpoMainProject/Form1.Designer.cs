@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCloseMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,6 +131,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nameProductAddBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.exitAddTypePanelBtn = new System.Windows.Forms.Button();
+            this.exitAddProductPanel = new System.Windows.Forms.Button();
+            this.exitAddClientPanelBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -176,7 +179,7 @@
             // fileCloseMenuBtn
             // 
             this.fileCloseMenuBtn.Name = "fileCloseMenuBtn";
-            this.fileCloseMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.fileCloseMenuBtn.Size = new System.Drawing.Size(120, 22);
             this.fileCloseMenuBtn.Text = "Закрыть";
             this.fileCloseMenuBtn.Click += new System.EventHandler(this.fileCloseMenuBtn_Click);
             // 
@@ -193,21 +196,21 @@
             // recordAddMenuBtn
             // 
             this.recordAddMenuBtn.Name = "recordAddMenuBtn";
-            this.recordAddMenuBtn.Size = new System.Drawing.Size(128, 22);
+            this.recordAddMenuBtn.Size = new System.Drawing.Size(180, 22);
             this.recordAddMenuBtn.Text = "Добавить";
             this.recordAddMenuBtn.Click += new System.EventHandler(this.recordAddMenuBtn_Click);
             // 
             // recordUpdMenuBtn
             // 
             this.recordUpdMenuBtn.Name = "recordUpdMenuBtn";
-            this.recordUpdMenuBtn.Size = new System.Drawing.Size(128, 22);
+            this.recordUpdMenuBtn.Size = new System.Drawing.Size(180, 22);
             this.recordUpdMenuBtn.Text = "Изменить";
             this.recordUpdMenuBtn.Visible = false;
             // 
             // recordDelMenuBtn
             // 
             this.recordDelMenuBtn.Name = "recordDelMenuBtn";
-            this.recordDelMenuBtn.Size = new System.Drawing.Size(128, 22);
+            this.recordDelMenuBtn.Size = new System.Drawing.Size(180, 22);
             this.recordDelMenuBtn.Text = "Удалить";
             this.recordDelMenuBtn.Click += new System.EventHandler(this.recordDelMenuBtn_Click);
             // 
@@ -298,8 +301,8 @@
             // 
             // fullnameClmn
             // 
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle29;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
             this.fullnameClmn.ReadOnly = true;
@@ -307,8 +310,8 @@
             // 
             // addressClientClmn
             // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle30;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
             this.addressClientClmn.ReadOnly = true;
@@ -322,9 +325,9 @@
             // 
             // phoneNumberClientClmn
             // 
-            dataGridViewCellStyle3.Format = "+375 (00) 000 00 00";
-            dataGridViewCellStyle3.NullValue = null;
-            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle31.Format = "+375 (00) 000 00 00";
+            dataGridViewCellStyle31.NullValue = null;
+            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle31;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
             this.phoneNumberClientClmn.ReadOnly = true;
@@ -333,6 +336,8 @@
             // addClientPanel
             // 
             this.addClientPanel.BackColor = System.Drawing.Color.LightCoral;
+            this.addClientPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addClientPanel.Controls.Add(this.exitAddClientPanelBtn);
             this.addClientPanel.Controls.Add(this.addClientButton);
             this.addClientPanel.Controls.Add(this.label23);
             this.addClientPanel.Controls.Add(this.label22);
@@ -355,9 +360,10 @@
             // 
             // addClientButton
             // 
-            this.addClientButton.Location = new System.Drawing.Point(6, 154);
+            this.addClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addClientButton.Location = new System.Drawing.Point(-1, 154);
             this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(261, 23);
+            this.addClientButton.Size = new System.Drawing.Size(277, 24);
             this.addClientButton.TabIndex = 13;
             this.addClientButton.Text = "Добавить";
             this.addClientButton.UseVisualStyleBackColor = true;
@@ -541,6 +547,8 @@
             // addTypePanel
             // 
             this.addTypePanel.BackColor = System.Drawing.Color.Thistle;
+            this.addTypePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addTypePanel.Controls.Add(this.exitAddTypePanelBtn);
             this.addTypePanel.Controls.Add(this.descriptionTypeAddBox);
             this.addTypePanel.Controls.Add(this.button1);
             this.addTypePanel.Controls.Add(this.label16);
@@ -554,7 +562,8 @@
             // 
             // descriptionTypeAddBox
             // 
-            this.descriptionTypeAddBox.Location = new System.Drawing.Point(6, 76);
+            this.descriptionTypeAddBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descriptionTypeAddBox.Location = new System.Drawing.Point(3, 76);
             this.descriptionTypeAddBox.Name = "descriptionTypeAddBox";
             this.descriptionTypeAddBox.Size = new System.Drawing.Size(203, 74);
             this.descriptionTypeAddBox.TabIndex = 6;
@@ -562,9 +571,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 156);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(-1, 156);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 23);
+            this.button1.Size = new System.Drawing.Size(215, 25);
             this.button1.TabIndex = 5;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -573,7 +583,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 59);
+            this.label16.Location = new System.Drawing.Point(0, 59);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(84, 13);
             this.label16.TabIndex = 4;
@@ -582,7 +592,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 20);
+            this.label15.Location = new System.Drawing.Point(0, 20);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(84, 13);
             this.label15.TabIndex = 3;
@@ -591,7 +601,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Location = new System.Drawing.Point(0, -1);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 13);
             this.label14.TabIndex = 2;
@@ -599,7 +609,7 @@
             // 
             // nameTypeAddBox
             // 
-            this.nameTypeAddBox.Location = new System.Drawing.Point(6, 36);
+            this.nameTypeAddBox.Location = new System.Drawing.Point(3, 36);
             this.nameTypeAddBox.Name = "nameTypeAddBox";
             this.nameTypeAddBox.Size = new System.Drawing.Size(203, 20);
             this.nameTypeAddBox.TabIndex = 0;
@@ -810,9 +820,9 @@
             // productPage
             // 
             this.productPage.Controls.Add(this.addQtyProduct);
-            this.productPage.Controls.Add(this.productGrid);
             this.productPage.Controls.Add(this.label4);
             this.productPage.Controls.Add(this.searchProductBox);
+            this.productPage.Controls.Add(this.productGrid);
             this.productPage.Controls.Add(this.addProductPanel);
             this.productPage.Location = new System.Drawing.Point(4, 22);
             this.productPage.Name = "productPage";
@@ -930,8 +940,8 @@
             // 
             // descriptionProductClmn
             // 
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle32;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
             this.descriptionProductClmn.ReadOnly = true;
@@ -957,7 +967,9 @@
             // 
             // addProductPanel
             // 
-            this.addProductPanel.BackColor = System.Drawing.Color.Orange;
+            this.addProductPanel.BackColor = System.Drawing.Color.Transparent;
+            this.addProductPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addProductPanel.Controls.Add(this.exitAddProductPanel);
             this.addProductPanel.Controls.Add(this.priceProductAddBox);
             this.addProductPanel.Controls.Add(this.addProductBtn);
             this.addProductPanel.Controls.Add(this.label13);
@@ -988,9 +1000,10 @@
             // 
             // addProductBtn
             // 
-            this.addProductBtn.Location = new System.Drawing.Point(7, 196);
+            this.addProductBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addProductBtn.Location = new System.Drawing.Point(0, 195);
             this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(339, 22);
+            this.addProductBtn.Size = new System.Drawing.Size(352, 36);
             this.addProductBtn.TabIndex = 13;
             this.addProductBtn.Text = "Добавить";
             this.addProductBtn.UseVisualStyleBackColor = true;
@@ -1016,6 +1029,7 @@
             // 
             // descriptionAddBox
             // 
+            this.descriptionAddBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.descriptionAddBox.Location = new System.Drawing.Point(146, 83);
             this.descriptionAddBox.Name = "descriptionAddBox";
             this.descriptionAddBox.Size = new System.Drawing.Size(200, 106);
@@ -1096,6 +1110,39 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Добавить товар";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // exitAddTypePanelBtn
+            // 
+            this.exitAddTypePanelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitAddTypePanelBtn.Location = new System.Drawing.Point(194, 0);
+            this.exitAddTypePanelBtn.Name = "exitAddTypePanelBtn";
+            this.exitAddTypePanelBtn.Size = new System.Drawing.Size(20, 23);
+            this.exitAddTypePanelBtn.TabIndex = 7;
+            this.exitAddTypePanelBtn.Text = "X";
+            this.exitAddTypePanelBtn.UseVisualStyleBackColor = true;
+            this.exitAddTypePanelBtn.Click += new System.EventHandler(this.ExitAddPanelProductBtn_Click);
+            // 
+            // exitAddProductPanel
+            // 
+            this.exitAddProductPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitAddProductPanel.Location = new System.Drawing.Point(327, 0);
+            this.exitAddProductPanel.Name = "exitAddProductPanel";
+            this.exitAddProductPanel.Size = new System.Drawing.Size(24, 24);
+            this.exitAddProductPanel.TabIndex = 15;
+            this.exitAddProductPanel.Text = "X";
+            this.exitAddProductPanel.UseVisualStyleBackColor = true;
+            this.exitAddProductPanel.Click += new System.EventHandler(this.ExitAddProductPanel_Click);
+            // 
+            // exitAddClientPanelBtn
+            // 
+            this.exitAddClientPanelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exitAddClientPanelBtn.Location = new System.Drawing.Point(252, -1);
+            this.exitAddClientPanelBtn.Name = "exitAddClientPanelBtn";
+            this.exitAddClientPanelBtn.Size = new System.Drawing.Size(24, 24);
+            this.exitAddClientPanelBtn.TabIndex = 14;
+            this.exitAddClientPanelBtn.Text = "X";
+            this.exitAddClientPanelBtn.UseVisualStyleBackColor = true;
+            this.exitAddClientPanelBtn.Click += new System.EventHandler(this.ExitAddClientPanelBtn_Click);
             // 
             // MainForm
             // 
@@ -1242,6 +1289,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DateTimePicker dateFrom;
         private System.Windows.Forms.Button resetOrderGrid;
+        private System.Windows.Forms.Button exitAddTypePanelBtn;
+        private System.Windows.Forms.Button exitAddProductPanel;
+        private System.Windows.Forms.Button exitAddClientPanelBtn;
     }
 }
 
