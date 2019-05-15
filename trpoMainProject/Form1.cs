@@ -486,18 +486,40 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 From ЗаказанныйТовар Inner Join Товар On ЗаказанныйТовар.КодТовара = Товар.КодТовара
 Where КодЗаказа = {idOrder}";
                    var command = new OleDbCommand(query, _conn);
+                   var dataAdapter = new OleDbDataAdapter(command);
+                   var dataTable = new DataTable();
+                   dataAdapter.Fill(dataTable);
+                   int rowCount = dataTable.Rows.Count;
                    var reader = command.ExecuteReader();
+                   var table = from i in dataTable.AsEnumerable()
+                               select i;
                    string message = $"Номер заказа: {ordersGrid.Rows[row].Cells[0].Value}\n" +
                        $"ФИО клиента: {ordersGrid.Rows[row].Cells[1].Value}\n" +
                        $"Дата оформления: {ordersGrid.Rows[row].Cells[2].Value}\n" +
-                       $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n" +
-                       $"Заказанные товары:\n";
-
-                   while (reader.Read())
+                       $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n";
+                   
+                   int countRow = table.Count() + 2;
+                   Word.Range range = wordApp.Selection.Range;
+                   Object behiavor = Word.WdDefaultTableBehavior.wdWord9TableBehavior;
+                   Object autoFitBehiavor = Word.WdAutoFitBehavior.wdAutoFitFixed;
+                   wordDoc.Paragraphs[1].Range.Text = message;
+                   wordDoc.Tables.Add(wordDoc.Paragraphs[1].Range, countRow, 3, ref behiavor, ref autoFitBehiavor);
+                   wordDoc.Tables[1].Cell(1, 1).Range.Text = "Название";
+                   wordDoc.Tables[1].Cell(1, 2).Range.Text = "Кол-во товаров";
+                   wordDoc.Tables[1].Cell(1, 3).Range.Text = "Общая Стоимость";
+                   int index = 2;
+                   foreach (var p in table)
                    {
-                       message += $"|{reader["Название"],-50}|" + $"{"Кол-во:" + reader["КолТов"],-15}" + $"{"Сум:" + reader["Summ"],-10}\n";
+                       wordDoc.Tables[1].Cell(index, 1).Range.Text = p.Field<string>("Название");
+                       wordDoc.Tables[1].Cell(index, 2).Range.Text = p.Field<int>("КолТов").ToString();
+                       wordDoc.Tables[1].Cell(index, 3).Range.Text = p.Field<decimal>("Summ").ToString();
+                       index++;
                    }
-                   wordDoc.Range().Text = message;
+                   wordDoc.Tables[1].Cell(countRow , 2).Range.Text = "Итого";
+                   wordDoc.Tables[1].Cell(countRow , 3).Range.Text = (from i in table
+                                                                        select i.Field<decimal>("Summ")).Sum().ToString();
+
+
                    object path = save.FileName;
                    wordDoc.SaveAs2(ref path);
                    wordDoc.Close();
