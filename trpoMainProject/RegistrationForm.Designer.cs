@@ -111,9 +111,25 @@
             // rankNumeric
             // 
             this.rankNumeric.Location = new System.Drawing.Point(119, 25);
+            this.rankNumeric.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.rankNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rankNumeric.Name = "rankNumeric";
+            this.rankNumeric.ReadOnly = true;
             this.rankNumeric.Size = new System.Drawing.Size(120, 20);
             this.rankNumeric.TabIndex = 7;
+            this.rankNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -187,9 +203,25 @@
             // expNumeric
             // 
             this.expNumeric.Location = new System.Drawing.Point(119, 68);
+            this.expNumeric.Maximum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.expNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.expNumeric.Name = "expNumeric";
+            this.expNumeric.ReadOnly = true;
             this.expNumeric.Size = new System.Drawing.Size(120, 20);
             this.expNumeric.TabIndex = 16;
+            this.expNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // addressBox
             // 

@@ -28,7 +28,7 @@ namespace trpoMainProject
             InitializeComponent();
             changeTemplateGrid();
             dbInit();
-            //autariztion();
+            autariztion();
             showTables();
         }
 
@@ -614,6 +614,12 @@ Where КодЗаказа = {idOrder}";
         private void ExitAddClientPanelBtn_Click(object sender, EventArgs e)
         {
             addClientPanel.SendToBack();
+        }
+
+        private void РегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrationForm form = new RegistrationForm(_conn);
+            form.ShowDialog();
         }
     }
 }

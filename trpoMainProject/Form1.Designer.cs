@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCloseMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,6 +134,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nameProductAddBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.продавецToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.регистрацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -160,6 +163,7 @@
             this.fileMenuBtn,
             this.recordMenuBtn,
             this.docMenuBtn,
+            this.продавецToolStripMenuItem,
             this.helpMenuBtn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -301,8 +305,8 @@
             // 
             // fullnameClmn
             // 
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle9;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
             this.fullnameClmn.ReadOnly = true;
@@ -310,8 +314,8 @@
             // 
             // addressClientClmn
             // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle10;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
             this.addressClientClmn.ReadOnly = true;
@@ -325,9 +329,9 @@
             // 
             // phoneNumberClientClmn
             // 
-            dataGridViewCellStyle3.Format = "+375 (00) 000 00 00";
-            dataGridViewCellStyle3.NullValue = null;
-            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Format = "+375 (00) 000 00 00";
+            dataGridViewCellStyle11.NullValue = null;
+            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle11;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
             this.phoneNumberClientClmn.ReadOnly = true;
@@ -980,8 +984,8 @@
             // 
             // descriptionProductClmn
             // 
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle12;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
             this.descriptionProductClmn.ReadOnly = true;
@@ -1144,6 +1148,28 @@
             this.label7.Text = "Добавить товар";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // продавецToolStripMenuItem
+            // 
+            this.продавецToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.регистрацияToolStripMenuItem,
+            this.выйтиToolStripMenuItem});
+            this.продавецToolStripMenuItem.Name = "продавецToolStripMenuItem";
+            this.продавецToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.продавецToolStripMenuItem.Text = "Продавец";
+            // 
+            // регистрацияToolStripMenuItem
+            // 
+            this.регистрацияToolStripMenuItem.Name = "регистрацияToolStripMenuItem";
+            this.регистрацияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.регистрацияToolStripMenuItem.Text = "Регистрация";
+            this.регистрацияToolStripMenuItem.Click += new System.EventHandler(this.РегистрацияToolStripMenuItem_Click);
+            // 
+            // выйтиToolStripMenuItem
+            // 
+            this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выйтиToolStripMenuItem.Text = "Выйти";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1292,6 +1318,9 @@
         private System.Windows.Forms.Button exitAddTypePanelBtn;
         private System.Windows.Forms.Button exitAddProductPanel;
         private System.Windows.Forms.Button exitAddClientPanelBtn;
+        private System.Windows.Forms.ToolStripMenuItem продавецToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem регистрацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
     }
 }
 
