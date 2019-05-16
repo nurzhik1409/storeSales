@@ -211,9 +211,12 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
         public void SearchInGrid(DataGridView grid, string value)
         {
             var selectedRows = grid.SelectedRows;
-            for (int i = 0; i < grid.SelectedRows.Count; i++)
+            for (int i = 0; i < grid.RowCount; i++)
             {
-                selectedRows[i].Selected = false;
+                for (int j = 0; j < grid.ColumnCount; j++)
+                {
+                    grid[j, i].Selected = false;
+                }
             }
             if (value != "")
             {
@@ -230,14 +233,6 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
                             }
                         }
                     }
-                }
-            }
-            else
-            {
-                selectedRows = grid.SelectedRows;
-                for (int i = 0; i < grid.SelectedRows.Count; i++)
-                {
-                    selectedRows[i].Selected = false;
                 }
             }
         }

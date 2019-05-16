@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCloseMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,9 +75,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.searchTypeBox = new System.Windows.Forms.TextBox();
             this.typeGrid = new System.Windows.Forms.DataGridView();
-            this.idType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameTypeClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDisriptionClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addTypePanel = new System.Windows.Forms.Panel();
             this.exitAddTypePanelBtn = new System.Windows.Forms.Button();
             this.descriptionTypeAddBox = new System.Windows.Forms.RichTextBox();
@@ -101,10 +98,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchBoxOrder = new System.Windows.Forms.TextBox();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
-            this.IdOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tables = new System.Windows.Forms.TabControl();
             this.productPage = new System.Windows.Forms.TabPage();
             this.addQtyProduct = new System.Windows.Forms.Panel();
@@ -153,6 +146,13 @@
             this.label33 = new System.Windows.Forms.Label();
             this.changeProduct = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.idType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameTypeClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDisriptionClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullnameOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -345,8 +345,8 @@
             // 
             // fullnameClmn
             // 
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle25;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
             this.fullnameClmn.ReadOnly = true;
@@ -354,8 +354,8 @@
             // 
             // addressClientClmn
             // 
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle26;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
             this.addressClientClmn.ReadOnly = true;
@@ -369,9 +369,9 @@
             // 
             // phoneNumberClientClmn
             // 
-            dataGridViewCellStyle15.Format = "+375 (00) 000 00 00";
-            dataGridViewCellStyle15.NullValue = null;
-            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle27.Format = "+375 (00) 000 00 00";
+            dataGridViewCellStyle27.NullValue = null;
+            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle27;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
             this.phoneNumberClientClmn.ReadOnly = true;
@@ -549,7 +549,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(546, 5);
+            this.label5.Location = new System.Drawing.Point(650, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 4;
@@ -557,7 +557,7 @@
             // 
             // searchTypeBox
             // 
-            this.searchTypeBox.Location = new System.Drawing.Point(549, 21);
+            this.searchTypeBox.Location = new System.Drawing.Point(653, 19);
             this.searchTypeBox.Name = "searchTypeBox";
             this.searchTypeBox.Size = new System.Drawing.Size(117, 20);
             this.searchTypeBox.TabIndex = 3;
@@ -574,30 +574,8 @@
             this.typeGrid.Location = new System.Drawing.Point(3, 3);
             this.typeGrid.Name = "typeGrid";
             this.typeGrid.ReadOnly = true;
-            this.typeGrid.Size = new System.Drawing.Size(540, 298);
+            this.typeGrid.Size = new System.Drawing.Size(641, 298);
             this.typeGrid.TabIndex = 0;
-            // 
-            // idType
-            // 
-            this.idType.HeaderText = "Id";
-            this.idType.Name = "idType";
-            this.idType.ReadOnly = true;
-            this.idType.Visible = false;
-            // 
-            // nameTypeClmn
-            // 
-            this.nameTypeClmn.HeaderText = "Название вида";
-            this.nameTypeClmn.MinimumWidth = 150;
-            this.nameTypeClmn.Name = "nameTypeClmn";
-            this.nameTypeClmn.ReadOnly = true;
-            this.nameTypeClmn.Width = 150;
-            // 
-            // typeDisriptionClmn
-            // 
-            this.typeDisriptionClmn.HeaderText = "Описание типа";
-            this.typeDisriptionClmn.Name = "typeDisriptionClmn";
-            this.typeDisriptionClmn.ReadOnly = true;
-            this.typeDisriptionClmn.Width = 300;
             // 
             // addTypePanel
             // 
@@ -844,31 +822,6 @@
             this.ordersGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.ordersGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGrid_CellDoubleClick);
             // 
-            // IdOrderClmn
-            // 
-            this.IdOrderClmn.HeaderText = "Id";
-            this.IdOrderClmn.Name = "IdOrderClmn";
-            this.IdOrderClmn.ReadOnly = true;
-            this.IdOrderClmn.Visible = false;
-            // 
-            // fullnameOrderClmn
-            // 
-            this.fullnameOrderClmn.HeaderText = "ФИО";
-            this.fullnameOrderClmn.Name = "fullnameOrderClmn";
-            this.fullnameOrderClmn.ReadOnly = true;
-            // 
-            // dateOrderClmn
-            // 
-            this.dateOrderClmn.HeaderText = "Дата заказа";
-            this.dateOrderClmn.Name = "dateOrderClmn";
-            this.dateOrderClmn.ReadOnly = true;
-            // 
-            // sumOrderClmn
-            // 
-            this.sumOrderClmn.HeaderText = "Сумма заказа";
-            this.sumOrderClmn.Name = "sumOrderClmn";
-            this.sumOrderClmn.ReadOnly = true;
-            // 
             // tables
             // 
             this.tables.Controls.Add(this.orderPage);
@@ -888,9 +841,9 @@
             this.productPage.Controls.Add(this.addQtyProduct);
             this.productPage.Controls.Add(this.label4);
             this.productPage.Controls.Add(this.searchProductBox);
-            this.productPage.Controls.Add(this.productUpdPanel);
             this.productPage.Controls.Add(this.productGrid);
             this.productPage.Controls.Add(this.addProductPanel);
+            this.productPage.Controls.Add(this.productUpdPanel);
             this.productPage.Location = new System.Drawing.Point(4, 22);
             this.productPage.Name = "productPage";
             this.productPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1025,8 +978,8 @@
             // 
             // descriptionProductClmn
             // 
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle28;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
             this.descriptionProductClmn.ReadOnly = true;
@@ -1347,6 +1300,54 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
+            // idType
+            // 
+            this.idType.HeaderText = "Id";
+            this.idType.Name = "idType";
+            this.idType.ReadOnly = true;
+            this.idType.Visible = false;
+            // 
+            // nameTypeClmn
+            // 
+            this.nameTypeClmn.HeaderText = "Название вида";
+            this.nameTypeClmn.MinimumWidth = 150;
+            this.nameTypeClmn.Name = "nameTypeClmn";
+            this.nameTypeClmn.ReadOnly = true;
+            this.nameTypeClmn.Width = 150;
+            // 
+            // typeDisriptionClmn
+            // 
+            this.typeDisriptionClmn.HeaderText = "Описание типа";
+            this.typeDisriptionClmn.Name = "typeDisriptionClmn";
+            this.typeDisriptionClmn.ReadOnly = true;
+            this.typeDisriptionClmn.Width = 425;
+            // 
+            // IdOrderClmn
+            // 
+            this.IdOrderClmn.HeaderText = "Id";
+            this.IdOrderClmn.Name = "IdOrderClmn";
+            this.IdOrderClmn.ReadOnly = true;
+            this.IdOrderClmn.Visible = false;
+            // 
+            // fullnameOrderClmn
+            // 
+            this.fullnameOrderClmn.HeaderText = "ФИО";
+            this.fullnameOrderClmn.Name = "fullnameOrderClmn";
+            this.fullnameOrderClmn.ReadOnly = true;
+            this.fullnameOrderClmn.Width = 300;
+            // 
+            // dateOrderClmn
+            // 
+            this.dateOrderClmn.HeaderText = "Дата заказа";
+            this.dateOrderClmn.Name = "dateOrderClmn";
+            this.dateOrderClmn.ReadOnly = true;
+            // 
+            // sumOrderClmn
+            // 
+            this.sumOrderClmn.HeaderText = "Сумма заказа";
+            this.sumOrderClmn.Name = "sumOrderClmn";
+            this.sumOrderClmn.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1418,14 +1419,7 @@
         private System.Windows.Forms.TextBox searchBoxOrder;
         private System.Windows.Forms.DataGridView ordersGrid;
         private System.Windows.Forms.TabControl tables;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdOrderClmn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameOrderClmn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOrderClmn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sumOrderClmn;
         private System.Windows.Forms.DataGridView typeGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameTypeClmn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDisriptionClmn;
         private System.Windows.Forms.TabPage productPage;
         private System.Windows.Forms.DataGridView clientGrid;
         private System.Windows.Forms.DataGridView productGrid;
@@ -1517,6 +1511,13 @@
         private System.Windows.Forms.TextBox nameProductUpd;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameTypeClmn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDisriptionClmn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdOrderClmn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameOrderClmn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOrderClmn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sumOrderClmn;
     }
 }
 
