@@ -161,6 +161,22 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.updateTypeBtn = new System.Windows.Forms.Button();
+            this.updClientPanel = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.lastNameUpdBox = new System.Windows.Forms.TextBox();
+            this.firstNameUpdBox = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.phoneNumUpdBox = new System.Windows.Forms.MaskedTextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.dateBirthUpdPanelBox = new System.Windows.Forms.DateTimePicker();
+            this.label41 = new System.Windows.Forms.Label();
+            this.changeClientBtn = new System.Windows.Forms.Button();
+            this.sureNameUpdBox = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.addressUpdBox = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -182,6 +198,7 @@
             this.productUpdPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProdUpd)).BeginInit();
             this.updTypePanel.SuspendLayout();
+            this.updClientPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -302,6 +319,7 @@
             this.clientsPage.Controls.Add(this.label6);
             this.clientsPage.Controls.Add(this.searchClientBox);
             this.clientsPage.Controls.Add(this.clientGrid);
+            this.clientsPage.Controls.Add(this.updClientPanel);
             this.clientsPage.Controls.Add(this.addClientPanel);
             this.clientsPage.Location = new System.Drawing.Point(4, 22);
             this.clientsPage.Name = "clientsPage";
@@ -1438,6 +1456,158 @@
             this.updateTypeBtn.UseVisualStyleBackColor = true;
             this.updateTypeBtn.Click += new System.EventHandler(this.UpdateTypeBtn_Click);
             // 
+            // updClientPanel
+            // 
+            this.updClientPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.updClientPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updClientPanel.Controls.Add(this.button3);
+            this.updClientPanel.Controls.Add(this.addressUpdBox);
+            this.updClientPanel.Controls.Add(this.label43);
+            this.updClientPanel.Controls.Add(this.sureNameUpdBox);
+            this.updClientPanel.Controls.Add(this.label42);
+            this.updClientPanel.Controls.Add(this.changeClientBtn);
+            this.updClientPanel.Controls.Add(this.label41);
+            this.updClientPanel.Controls.Add(this.dateBirthUpdPanelBox);
+            this.updClientPanel.Controls.Add(this.label40);
+            this.updClientPanel.Controls.Add(this.phoneNumUpdBox);
+            this.updClientPanel.Controls.Add(this.firstNameUpdBox);
+            this.updClientPanel.Controls.Add(this.label39);
+            this.updClientPanel.Controls.Add(this.lastNameUpdBox);
+            this.updClientPanel.Controls.Add(this.label38);
+            this.updClientPanel.Controls.Add(this.label37);
+            this.updClientPanel.Location = new System.Drawing.Point(155, 42);
+            this.updClientPanel.Name = "updClientPanel";
+            this.updClientPanel.Size = new System.Drawing.Size(261, 208);
+            this.updClientPanel.TabIndex = 8;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.Location = new System.Drawing.Point(-1, 4);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(112, 24);
+            this.label37.TabIndex = 0;
+            this.label37.Text = "Изменение";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(3, 41);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(56, 13);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Фамилия";
+            // 
+            // lastNameUpdBox
+            // 
+            this.lastNameUpdBox.Location = new System.Drawing.Point(3, 57);
+            this.lastNameUpdBox.Name = "lastNameUpdBox";
+            this.lastNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.lastNameUpdBox.TabIndex = 2;
+            // 
+            // firstNameUpdBox
+            // 
+            this.firstNameUpdBox.Location = new System.Drawing.Point(3, 101);
+            this.firstNameUpdBox.Name = "firstNameUpdBox";
+            this.firstNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.firstNameUpdBox.TabIndex = 4;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 85);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(29, 13);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "Имя";
+            // 
+            // phoneNumUpdBox
+            // 
+            this.phoneNumUpdBox.Location = new System.Drawing.Point(118, 144);
+            this.phoneNumUpdBox.Mask = "000000000";
+            this.phoneNumUpdBox.Name = "phoneNumUpdBox";
+            this.phoneNumUpdBox.Size = new System.Drawing.Size(138, 20);
+            this.phoneNumUpdBox.TabIndex = 5;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(118, 128);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(52, 13);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Телефон";
+            // 
+            // dateBirthUpdPanelBox
+            // 
+            this.dateBirthUpdPanelBox.Location = new System.Drawing.Point(118, 104);
+            this.dateBirthUpdPanelBox.Name = "dateBirthUpdPanelBox";
+            this.dateBirthUpdPanelBox.Size = new System.Drawing.Size(138, 20);
+            this.dateBirthUpdPanelBox.TabIndex = 7;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(118, 87);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(86, 13);
+            this.label41.TabIndex = 8;
+            this.label41.Text = "Дата рождения";
+            // 
+            // changeClientBtn
+            // 
+            this.changeClientBtn.Location = new System.Drawing.Point(3, 180);
+            this.changeClientBtn.Name = "changeClientBtn";
+            this.changeClientBtn.Size = new System.Drawing.Size(253, 23);
+            this.changeClientBtn.TabIndex = 9;
+            this.changeClientBtn.Text = "Изменить";
+            this.changeClientBtn.UseVisualStyleBackColor = true;
+            this.changeClientBtn.Click += new System.EventHandler(this.ChangeClientBtn_Click);
+            // 
+            // sureNameUpdBox
+            // 
+            this.sureNameUpdBox.Location = new System.Drawing.Point(3, 144);
+            this.sureNameUpdBox.Name = "sureNameUpdBox";
+            this.sureNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.sureNameUpdBox.TabIndex = 11;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 128);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(54, 13);
+            this.label42.TabIndex = 10;
+            this.label42.Text = "Отчество";
+            // 
+            // addressUpdBox
+            // 
+            this.addressUpdBox.Location = new System.Drawing.Point(118, 57);
+            this.addressUpdBox.Name = "addressUpdBox";
+            this.addressUpdBox.Size = new System.Drawing.Size(138, 20);
+            this.addressUpdBox.TabIndex = 13;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(118, 41);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(38, 13);
+            this.label43.TabIndex = 12;
+            this.label43.Text = "Адрес";
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(237, -1);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(23, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1483,6 +1653,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.qtyProdUpd)).EndInit();
             this.updTypePanel.ResumeLayout(false);
             this.updTypePanel.PerformLayout();
+            this.updClientPanel.ResumeLayout(false);
+            this.updClientPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1618,6 +1790,22 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.RichTextBox descrTypeBox;
         private System.Windows.Forms.TextBox typeNameUpdBox;
+        private System.Windows.Forms.Panel updClientPanel;
+        private System.Windows.Forms.TextBox addressUpdBox;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox sureNameUpdBox;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button changeClientBtn;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.DateTimePicker dateBirthUpdPanelBox;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.MaskedTextBox phoneNumUpdBox;
+        private System.Windows.Forms.TextBox firstNameUpdBox;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox lastNameUpdBox;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button button3;
     }
 }
 

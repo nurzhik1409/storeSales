@@ -29,10 +29,21 @@ namespace trpoMainProject
             changeTemplateGrid();
             dbInit();
             //autariztion();
+            //tableProperty();
             showTables();
         }
 
-        
+        private void tableProperty()
+        {
+            ordersGrid.AllowUserToAddRows = false;
+            ordersGrid.RowCount = 1;
+            productGrid.AllowUserToAddRows = false;
+            productGrid.RowCount = 1;
+            typeGrid.AllowUserToAddRows = false;
+            typeGrid.RowCount = 1;
+            clientGrid.AllowUserToAddRows = false;
+            clientGrid.RowCount = 1;
+        }
 
         void testAddOrder()
         {
@@ -623,47 +634,65 @@ Where КодЗаказа = {idOrder}";
 
         private void RecordUpdMenuBtn_Click(object sender, EventArgs e)
         {
-            if (tables.SelectedTab.Text == "История Заказов")
+            try
             {
-                MessageBox.Show("Совершённый заказ нельзя изменить");
-            }
-            if (tables.SelectedTab.Text == "Товары")
-            {
-                //init cbox with type product
-                typeProductUpdCbox.ValueMember = "КодВида";
-                typeProductUpdCbox.DisplayMember = "НазваниеВида";
-                // remove old dataTable
-                if (typeProductUpdCbox.DataSource != null) 
+                if (tables.SelectedTab.Text == "История Заказов")
                 {
-                    ((IDisposable)typeProductUpdCbox.DataSource).Dispose();
+                    MessageBox.Show("Совершённый заказ нельзя изменить");
                 }
-                var adapter = new OleDbDataAdapter("Select * From ВидТовара", _conn);
-                var table = new DataTable();
-                adapter.Fill(table);
-                typeProductUpdCbox.DataSource = table;
-                updIdProd = (int)productGrid.CurrentRow.Cells[0].Value;
-                DataGridViewRow row = productGrid.CurrentRow;
-                nameProductUpd.Text = row.Cells[1].Value.ToString();
-                typeProductUpdCbox.Text = row.Cells[2].Value.ToString();
-                priceProductUpd.Text = row.Cells[3].Value.ToString();
-                qtyProdUpd.Value = Decimal.Parse(row.Cells[4].Value.ToString());
-                dateProdUpd.Value = DateTime.Parse(row.Cells[5].Value.ToString());
-                descrProdUpd.Text = row.Cells[6].Value.ToString();
-                productGrid.Enabled = false;
-                productUpdPanel.BringToFront();
+                if (tables.SelectedTab.Text == "Товары")
+                {
+                    //init cbox with type product
+                    typeProductUpdCbox.ValueMember = "КодВида";
+                    typeProductUpdCbox.DisplayMember = "НазваниеВида";
+                    // remove old dataTable
+                    if (typeProductUpdCbox.DataSource != null)
+                    {
+                        ((IDisposable)typeProductUpdCbox.DataSource).Dispose();
+                    }
+                    var adapter = new OleDbDataAdapter("Select * From ВидТовара", _conn);
+                    var table = new DataTable();
+                    adapter.Fill(table);
+                    typeProductUpdCbox.DataSource = table;
+                    updIdProd = (int)productGrid.CurrentRow.Cells[0].Value;
+                    DataGridViewRow row = productGrid.CurrentRow;
+                    nameProductUpd.Text = row.Cells[1].Value.ToString();
+                    typeProductUpdCbox.Text = row.Cells[2].Value.ToString();
+                    priceProductUpd.Text = row.Cells[3].Value.ToString();
+                    qtyProdUpd.Value = Decimal.Parse(row.Cells[4].Value.ToString());
+                    dateProdUpd.Value = DateTime.Parse(row.Cells[5].Value.ToString());
+                    descrProdUpd.Text = row.Cells[6].Value.ToString();
+                    productGrid.Enabled = false;
+                    productUpdPanel.BringToFront();
+                }
+                if (tables.SelectedTab.Text == "Виды товаров")
+                {
+                    DataGridViewRow row = typeGrid.CurrentRow;
+                    updIdType = int.Parse(row.Cells[0].Value.ToString());
+                    typeNameUpdBox.Text = row.Cells[1].Value.ToString();
+                    descrTypeBox.Text = row.Cells[2].Value.ToString();
+                    typeGrid.Enabled = false;
+                    updTypePanel.BringToFront();
+                }
+                if (tables.SelectedTab.Text == "Клиенты")
+                {
+                    clientGrid.Enabled = false;
+                    DataGridViewRow row = clientGrid.CurrentRow;
+                    updIdClient = int.Parse(row.Cells[0].Value.ToString());
+                    string[] fullName = row.Cells[1].Value.ToString().Split(new char[] { ' ' },
+                        StringSplitOptions.RemoveEmptyEntries);
+                    lastNameUpdBox.Text = fullName[0];
+                    firstNameUpdBox.Text = fullName[1];
+                    sureNameUpdBox.Text = fullName[2];
+                    addressUpdBox.Text = row.Cells[2].Value.ToString();
+                    dateBirthUpdPanelBox.Value = DateTime.Parse(row.Cells[3].Value.ToString());
+                    phoneNumUpdBox.Text = row.Cells[4].Value.ToString();
+                    updClientPanel.BringToFront();
+                }
             }
-            if (tables.SelectedTab.Text == "Виды товаров")
+            catch
             {
-                DataGridViewRow row = typeGrid.CurrentRow;
-                updIdType = int.Parse(row.Cells[0].Value.ToString());
-                typeNameUpdBox.Text = row.Cells[1].Value.ToString();
-                descrTypeBox.Text = row.Cells[2].Value.ToString();
-                typeGrid.Enabled = false;
-                updTypePanel.BringToFront();
-            }
-            if (tables.SelectedTab.Text == "Клиенты")
-            {
-                
+                MessageBox.Show("Выбрана некорректная строка");
             }
         }
 
@@ -708,6 +737,30 @@ Where КодЗаказа = {idOrder}";
             showTables();
             updTypePanel.SendToBack();
             typeGrid.Enabled = true;
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            clientGrid.Enabled = true;
+            updClientPanel.SendToBack();
+        }
+
+        private void ChangeClientBtn_Click(object sender, EventArgs e)
+        {
+            string query = $"Update Покупатель Set " +
+                $"Фамилия = '{lastNameUpdBox.Text}', " +
+                $"Имя = '{firstNameUpdBox.Text}', " +
+                $"Адрес = '{addressUpdBox.Text}', " +
+                $"ДатаРождения = @date, " +
+                $"Телефон = '{phoneNumUpdBox.Text}' " +
+                $"Where КодПокупателя = {updIdClient}";
+            var com = new OleDbCommand(query, _conn);
+            com.Parameters.Add(new OleDbParameter("@date", 
+                dateBirthUpdPanelBox.Value.ToShortDateString()));
+            com.ExecuteNonQuery();
+            showTables();
+            clientGrid.Enabled = true;
+            updClientPanel.SendToBack();
         }
     }
 }
