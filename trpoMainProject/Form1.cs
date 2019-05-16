@@ -28,7 +28,7 @@ namespace trpoMainProject
             InitializeComponent();
             changeTemplateGrid();
             dbInit();
-            autariztion();
+            //autariztion();
             showTables();
         }
 
@@ -618,6 +618,8 @@ Where КодЗаказа = {idOrder}";
         }
 
         private int updIdProd = -1;
+        private int updIdType = -1;
+        private int updIdClient = -1;
 
         private void RecordUpdMenuBtn_Click(object sender, EventArgs e)
         {
@@ -652,7 +654,12 @@ Where КодЗаказа = {idOrder}";
             }
             if (tables.SelectedTab.Text == "Виды товаров")
             {
-                
+                DataGridViewRow row = typeGrid.CurrentRow;
+                updIdType = int.Parse(row.Cells[0].Value.ToString());
+                typeNameUpdBox.Text = row.Cells[1].Value.ToString();
+                descrTypeBox.Text = row.Cells[2].Value.ToString();
+                typeGrid.Enabled = false;
+                updTypePanel.BringToFront();
             }
             if (tables.SelectedTab.Text == "Клиенты")
             {
@@ -682,6 +689,25 @@ Where КодЗаказа = {idOrder}";
         {
             productGrid.Enabled = true;
             productUpdPanel.SendToBack();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            updTypePanel.SendToBack();
+            typeGrid.Enabled = true;
+        }
+
+        private void UpdateTypeBtn_Click(object sender, EventArgs e)
+        {
+            string query = $"Update ВидТовара Set " +
+                $"НазваниеВида = '{typeNameUpdBox.Text}', " +
+                $"СфераПрименения = '{descrTypeBox.Text}' " +
+                $"Where КодВида = {updIdType}";
+            var com = new OleDbCommand(query, _conn);
+            com.ExecuteNonQuery();
+            showTables();
+            updTypePanel.SendToBack();
+            typeGrid.Enabled = true;
         }
     }
 }

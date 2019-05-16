@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCloseMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,6 +153,14 @@
             this.fullnameOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updTypePanel = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.hideUpdTypePanel = new System.Windows.Forms.Button();
+            this.typeNameUpdBox = new System.Windows.Forms.TextBox();
+            this.descrTypeBox = new System.Windows.Forms.RichTextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.updateTypeBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
@@ -173,6 +181,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.qtyProductAddBox)).BeginInit();
             this.productUpdPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProdUpd)).BeginInit();
+            this.updTypePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -345,8 +354,8 @@
             // 
             // fullnameClmn
             // 
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle5;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
             this.fullnameClmn.ReadOnly = true;
@@ -354,8 +363,8 @@
             // 
             // addressClientClmn
             // 
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle6;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
             this.addressClientClmn.ReadOnly = true;
@@ -369,9 +378,9 @@
             // 
             // phoneNumberClientClmn
             // 
-            dataGridViewCellStyle27.Format = "+375 (00) 000 00 00";
-            dataGridViewCellStyle27.NullValue = null;
-            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Format = "+375 (00) 000 00 00";
+            dataGridViewCellStyle7.NullValue = null;
+            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle7;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
             this.phoneNumberClientClmn.ReadOnly = true;
@@ -538,6 +547,7 @@
             this.typeProductPage.Controls.Add(this.searchTypeBox);
             this.typeProductPage.Controls.Add(this.typeGrid);
             this.typeProductPage.Controls.Add(this.addTypePanel);
+            this.typeProductPage.Controls.Add(this.updTypePanel);
             this.typeProductPage.Location = new System.Drawing.Point(4, 22);
             this.typeProductPage.Name = "typeProductPage";
             this.typeProductPage.Padding = new System.Windows.Forms.Padding(3);
@@ -978,8 +988,8 @@
             // 
             // descriptionProductClmn
             // 
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle8;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
             this.descriptionProductClmn.ReadOnly = true;
@@ -1348,6 +1358,86 @@
             this.sumOrderClmn.Name = "sumOrderClmn";
             this.sumOrderClmn.ReadOnly = true;
             // 
+            // updTypePanel
+            // 
+            this.updTypePanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.updTypePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updTypePanel.Controls.Add(this.updateTypeBtn);
+            this.updTypePanel.Controls.Add(this.label36);
+            this.updTypePanel.Controls.Add(this.label35);
+            this.updTypePanel.Controls.Add(this.descrTypeBox);
+            this.updTypePanel.Controls.Add(this.typeNameUpdBox);
+            this.updTypePanel.Controls.Add(this.hideUpdTypePanel);
+            this.updTypePanel.Controls.Add(this.label34);
+            this.updTypePanel.Location = new System.Drawing.Point(207, 47);
+            this.updTypePanel.Name = "updTypePanel";
+            this.updTypePanel.Size = new System.Drawing.Size(215, 178);
+            this.updTypePanel.TabIndex = 6;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.Location = new System.Drawing.Point(0, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(175, 20);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Изменить вид товара";
+            // 
+            // hideUpdTypePanel
+            // 
+            this.hideUpdTypePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.hideUpdTypePanel.Location = new System.Drawing.Point(191, 0);
+            this.hideUpdTypePanel.Name = "hideUpdTypePanel";
+            this.hideUpdTypePanel.Size = new System.Drawing.Size(23, 23);
+            this.hideUpdTypePanel.TabIndex = 1;
+            this.hideUpdTypePanel.Text = "X";
+            this.hideUpdTypePanel.UseVisualStyleBackColor = true;
+            this.hideUpdTypePanel.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // typeNameUpdBox
+            // 
+            this.typeNameUpdBox.Location = new System.Drawing.Point(4, 50);
+            this.typeNameUpdBox.Name = "typeNameUpdBox";
+            this.typeNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.typeNameUpdBox.TabIndex = 2;
+            // 
+            // descrTypeBox
+            // 
+            this.descrTypeBox.Location = new System.Drawing.Point(4, 89);
+            this.descrTypeBox.Name = "descrTypeBox";
+            this.descrTypeBox.Size = new System.Drawing.Size(206, 57);
+            this.descrTypeBox.TabIndex = 3;
+            this.descrTypeBox.Text = "";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 73);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(57, 13);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "Описание";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 32);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(84, 13);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Название вида";
+            // 
+            // updateTypeBtn
+            // 
+            this.updateTypeBtn.Location = new System.Drawing.Point(4, 150);
+            this.updateTypeBtn.Name = "updateTypeBtn";
+            this.updateTypeBtn.Size = new System.Drawing.Size(206, 23);
+            this.updateTypeBtn.TabIndex = 6;
+            this.updateTypeBtn.Text = "Изменить";
+            this.updateTypeBtn.UseVisualStyleBackColor = true;
+            this.updateTypeBtn.Click += new System.EventHandler(this.UpdateTypeBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1391,6 +1481,8 @@
             this.productUpdPanel.ResumeLayout(false);
             this.productUpdPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProdUpd)).EndInit();
+            this.updTypePanel.ResumeLayout(false);
+            this.updTypePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1518,6 +1610,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fullnameOrderClmn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOrderClmn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumOrderClmn;
+        private System.Windows.Forms.Panel updTypePanel;
+        private System.Windows.Forms.Button hideUpdTypePanel;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button updateTypeBtn;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.RichTextBox descrTypeBox;
+        private System.Windows.Forms.TextBox typeNameUpdBox;
     }
 }
 
