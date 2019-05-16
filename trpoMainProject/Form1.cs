@@ -558,5 +558,62 @@ Where КодЗаказа = {idOrder}";
         {
             showOrders();
         }
+
+        int selectedProduct = -1;
+        private void RecordUpdMenuBtn_Click(object sender, EventArgs e)
+        {
+            string query = "";
+            if (tables.SelectedTab.Text == "История Заказов")
+            {
+                
+
+            }
+            if (tables.SelectedTab.Text == "Товары")
+            {/*
+                var adapter = new OleDbDataAdapter("Select * From ВидТовара", _conn);
+                var table = new DataTable();
+                adapter.Fill(table);
+                typeProductUpdBox.ValueMember = "КодВида";
+                typeProductUpdBox.DisplayMember = "НазваниеВида";
+                typeProductUpdBox.DataSource = table;
+                typeProductUpdBox.Text = (productGrid.CurrentRow.Cells[2].Value).ToString();
+                nameProductUpdBox.Text = (productGrid.CurrentRow.Cells[1].Value).ToString();
+                priceProductUpdBox.Text = (productGrid.CurrentRow.Cells[3].Value).ToString();
+                qtyProductUpdBox.Value = (int)(productGrid.CurrentRow.Cells[4].Value);
+                selectedProduct = (int)productGrid.CurrentRow.Cells[0].Value;
+                dateProductUpdBox.Value = Convert.ToDateTime(productGrid.CurrentRow.Cells[5].Value);
+                descrUpdBox.Text = productGrid.CurrentRow.Cells[6].Value.ToString();
+               
+                updProductPanel.BringToFront();*/
+            }
+            if (tables.SelectedTab.Text == "Виды товаров")
+            {
+                query = $"Delete From ВидТовара Where КодВида = {typeGrid.CurrentRow.Cells[0].Value}";
+            }
+            if (tables.SelectedTab.Text == "Клиенты")
+            {
+                query = $"Delete From Покупатель Where КодПокупателя = {clientGrid.CurrentRow.Cells[0].Value}";
+            }
+            showTables();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            /*
+            if (nameProductUpdBox.Text != "")
+            {
+                string query = $"Update Товар " +
+                    $"Set КодВида = {typeProductUpdBox.SelectedValue}, Название = '{nameProductUpdBox.Text}', Стоимость = {priceProductUpdBox.Text}, КолНаСкл = {qtyProductUpdBox.Value}, ГодПроизв = @date, Описание = '{descrUpdBox}' " +
+                    $"Where КодТовара = {selectedProduct}";
+               
+                var com = new OleDbCommand(query, _conn);
+                com.Parameters.Add(new OleDbParameter("@date", dateProductUpdBox.Value.ToShortDateString()));
+                com.ExecuteNonQuery();
+
+            }
+            updProductPanel.SendToBack();
+            showTables();
+            */
+        }
     }
 }
