@@ -73,7 +73,7 @@
             // 
             this.passButton.Location = new System.Drawing.Point(12, 97);
             this.passButton.Name = "passButton";
-            this.passButton.Size = new System.Drawing.Size(153, 23);
+            this.passButton.Size = new System.Drawing.Size(230, 23);
             this.passButton.TabIndex = 4;
             this.passButton.Text = "Вход";
             this.passButton.UseVisualStyleBackColor = true;
@@ -88,6 +88,7 @@
             this.signUp.Size = new System.Drawing.Size(72, 13);
             this.signUp.TabIndex = 5;
             this.signUp.Text = "Регистрация";
+            this.signUp.Visible = false;
             this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 
             // AutorizationForm
@@ -95,12 +96,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(254, 130);
-            this.Controls.Add(this.signUp);
             this.Controls.Add(this.passButton);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.signUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AutorizationForm";
             this.Text = "Вход";

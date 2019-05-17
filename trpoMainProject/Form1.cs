@@ -29,10 +29,21 @@ namespace trpoMainProject
             changeTemplateGrid();
             dbInit();
             //autariztion();
+            //tableProperty();
             showTables();
         }
 
-        
+        private void tableProperty()
+        {
+            ordersGrid.AllowUserToAddRows = false;
+            ordersGrid.RowCount = 1;
+            productGrid.AllowUserToAddRows = false;
+            productGrid.RowCount = 1;
+            typeGrid.AllowUserToAddRows = false;
+            typeGrid.RowCount = 1;
+            clientGrid.AllowUserToAddRows = false;
+            clientGrid.RowCount = 1;
+        }
 
         void testAddOrder()
         {
@@ -211,9 +222,12 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
         public void SearchInGrid(DataGridView grid, string value)
         {
             var selectedRows = grid.SelectedRows;
-            for (int i = 0; i < grid.SelectedRows.Count; i++)
+            for (int i = 0; i < grid.RowCount; i++)
             {
-                selectedRows[i].Selected = false;
+                for (int j = 0; j < grid.ColumnCount; j++)
+                {
+                    grid[j, i].Selected = false;
+                }
             }
             if (value != "")
             {
@@ -230,14 +244,6 @@ FROM ВидТовара INNER JOIN Товар ON ВидТовара.КодВид
                             }
                         }
                     }
-                }
-            }
-            else
-            {
-                selectedRows = grid.SelectedRows;
-                for (int i = 0; i < grid.SelectedRows.Count; i++)
-                {
-                    selectedRows[i].Selected = false;
                 }
             }
         }
@@ -345,6 +351,13 @@ Where КодЗаказа = {idOrder}";
 
         private void addProductBtn_Click(object sender, EventArgs e)
         {
+            if (nameProductAddBox.Text == "" ||
+                typeProductAddBox.Text == "" ||
+                priceProductAddBox.Text == "")
+            {
+                MessageBox.Show("Заполните поля корректно!");
+                return;
+            }
             string query = $@"Insert Into Товар(Название, КодВида, Стоимость, КолНаСкл, ГодПроизв, Описание)
 Values ('{nameProductAddBox.Text}', {typeProductAddBox.SelectedValue}, {priceProductAddBox.Text}, {qtyProductAddBox.Value}, '{dateAddProduct.Value}', '{descriptionAddBox.Text}')";
             OleDbCommand command = new OleDbCommand(query, _conn);
@@ -361,6 +374,11 @@ Values ('{nameProductAddBox.Text}', {typeProductAddBox.SelectedValue}, {pricePro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (nameTypeAddBox.Text == "")
+            {
+                MessageBox.Show("Заполните название вида!");
+                return;
+            }
             string query = $@"Insert Into ВидТовара(НазваниеВида, СфераПрименения)
 Values ('{nameTypeAddBox.Text}', '{descriptionAddBox.Text}')";
             OleDbCommand command = new OleDbCommand(query, _conn);
@@ -386,6 +404,14 @@ Values ('{nameTypeAddBox.Text}', '{descriptionAddBox.Text}')";
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
+            if (lastNameAddBox.Text == "" ||
+                firstNameAddBox.Text == "" ||
+                sureNameAddBox.Text == "" ||
+                addressAddBox.Text == "" ||
+                phoneNumAddBox.Text == "")
+            {
+                MessageBox.Show("Заполните все поля");
+            }
             string query = $@"Insert Into Покупатель(Фамилия, Имя, Отчество, Адрес, ДатаРождения, Телефон)
 Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text}', '{addressAddBox.Text}','{dateBirthAddBox.Value.ToShortDateString()}', '{phoneNumAddBox.Text}')";
             OleDbCommand command = new OleDbCommand(query, _conn);
@@ -466,18 +492,40 @@ Values ('{lastNameAddBox.Text}', '{firstNameAddBox.Text}', '{sureNameAddBox.Text
 From ЗаказанныйТовар Inner Join Товар On ЗаказанныйТовар.КодТовара = Товар.КодТовара
 Where КодЗаказа = {idOrder}";
                    var command = new OleDbCommand(query, _conn);
+                   var dataAdapter = new OleDbDataAdapter(command);
+                   var dataTable = new DataTable();
+                   dataAdapter.Fill(dataTable);
+                   int rowCount = dataTable.Rows.Count;
                    var reader = command.ExecuteReader();
+                   var table = from i in dataTable.AsEnumerable()
+                               select i;
                    string message = $"Номер заказа: {ordersGrid.Rows[row].Cells[0].Value}\n" +
                        $"ФИО клиента: {ordersGrid.Rows[row].Cells[1].Value}\n" +
                        $"Дата оформления: {ordersGrid.Rows[row].Cells[2].Value}\n" +
-                       $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n" +
-                       $"Заказанные товары:\n";
-
-                   while (reader.Read())
+                       $"Общая сумма: {ordersGrid.Rows[row].Cells[3].Value}\n";
+                   
+                   int countRow = table.Count() + 2;
+                   Word.Range range = wordApp.Selection.Range;
+                   Object behiavor = Word.WdDefaultTableBehavior.wdWord9TableBehavior;
+                   Object autoFitBehiavor = Word.WdAutoFitBehavior.wdAutoFitFixed;
+                   wordDoc.Paragraphs[1].Range.Text = message;
+                   wordDoc.Tables.Add(wordDoc.Paragraphs[1].Range, countRow, 3, ref behiavor, ref autoFitBehiavor);
+                   wordDoc.Tables[1].Cell(1, 1).Range.Text = "Название";
+                   wordDoc.Tables[1].Cell(1, 2).Range.Text = "Кол-во товаров";
+                   wordDoc.Tables[1].Cell(1, 3).Range.Text = "Общая Стоимость";
+                   int index = 2;
+                   foreach (var p in table)
                    {
-                       message += $"|{reader["Название"],-50}|" + $"{"Кол-во:" + reader["КолТов"],-15}" + $"{"Сум:" + reader["Summ"],-10}\n";
+                       wordDoc.Tables[1].Cell(index, 1).Range.Text = p.Field<string>("Название");
+                       wordDoc.Tables[1].Cell(index, 2).Range.Text = p.Field<int>("КолТов").ToString();
+                       wordDoc.Tables[1].Cell(index, 3).Range.Text = p.Field<decimal>("Summ").ToString();
+                       index++;
                    }
-                   wordDoc.Range().Text = message;
+                   wordDoc.Tables[1].Cell(countRow , 2).Range.Text = "Итого";
+                   wordDoc.Tables[1].Cell(countRow , 3).Range.Text = (from i in table
+                                                                        select i.Field<decimal>("Summ")).Sum().ToString();
+
+
                    object path = save.FileName;
                    wordDoc.SaveAs2(ref path);
                    wordDoc.Close();
@@ -542,7 +590,7 @@ Where КодЗаказа = {idOrder}";
                    workSheet.Cells[i + 2, 1] = ordersGrid[0, i].Value;
                    workSheet.Cells[i + 2, 2] = ordersGrid[1, i].Value;
                    workSheet.Cells[i + 2, 3] = ordersGrid[2, i].Value;
-                   workSheet.Cells[i + 2, 4] = ordersGrid[0, i].Value;
+                   workSheet.Cells[i + 2, 4] = ordersGrid[3, i].Value;
                }
                var rng = workSheet.Range[$"D{ordersGrid.Rows.Count + 1}"];
                rng.Formula = $"=SUM(D2:D{ordersGrid.Rows.Count})";
@@ -559,61 +607,160 @@ Where КодЗаказа = {idOrder}";
             showOrders();
         }
 
-        int selectedProduct = -1;
-        private void RecordUpdMenuBtn_Click(object sender, EventArgs e)
+        private void ExitAddPanelProductBtn_Click(object sender, EventArgs e)
         {
-            string query = "";
-            if (tables.SelectedTab.Text == "История Заказов")
-            {
-                
-
-            }
-            if (tables.SelectedTab.Text == "Товары")
-            {/*
-                var adapter = new OleDbDataAdapter("Select * From ВидТовара", _conn);
-                var table = new DataTable();
-                adapter.Fill(table);
-                typeProductUpdBox.ValueMember = "КодВида";
-                typeProductUpdBox.DisplayMember = "НазваниеВида";
-                typeProductUpdBox.DataSource = table;
-                typeProductUpdBox.Text = (productGrid.CurrentRow.Cells[2].Value).ToString();
-                nameProductUpdBox.Text = (productGrid.CurrentRow.Cells[1].Value).ToString();
-                priceProductUpdBox.Text = (productGrid.CurrentRow.Cells[3].Value).ToString();
-                qtyProductUpdBox.Value = (int)(productGrid.CurrentRow.Cells[4].Value);
-                selectedProduct = (int)productGrid.CurrentRow.Cells[0].Value;
-                dateProductUpdBox.Value = Convert.ToDateTime(productGrid.CurrentRow.Cells[5].Value);
-                descrUpdBox.Text = productGrid.CurrentRow.Cells[6].Value.ToString();
-               
-                updProductPanel.BringToFront();*/
-            }
-            if (tables.SelectedTab.Text == "Виды товаров")
-            {
-                query = $"Delete From ВидТовара Where КодВида = {typeGrid.CurrentRow.Cells[0].Value}";
-            }
-            if (tables.SelectedTab.Text == "Клиенты")
-            {
-                query = $"Delete From Покупатель Where КодПокупателя = {clientGrid.CurrentRow.Cells[0].Value}";
-            }
-            showTables();
+            addTypePanel.SendToBack();
         }
 
+        private void ExitAddProductPanel_Click(object sender, EventArgs e)
+        {
+            addProductPanel.SendToBack();
+        }
+
+        private void ExitAddClientPanelBtn_Click(object sender, EventArgs e)
+        {
+            addClientPanel.SendToBack();
+        }
+
+        private void РегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrationForm form = new RegistrationForm(_conn);
+            form.ShowDialog();
+        }
+
+        private int updIdProd = -1;
+        private int updIdType = -1;
+        private int updIdClient = -1;
+
+        private void RecordUpdMenuBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tables.SelectedTab.Text == "История Заказов")
+                {
+                    MessageBox.Show("Совершённый заказ нельзя изменить");
+                }
+                if (tables.SelectedTab.Text == "Товары")
+                {
+                    //init cbox with type product
+                    typeProductUpdCbox.ValueMember = "КодВида";
+                    typeProductUpdCbox.DisplayMember = "НазваниеВида";
+                    // remove old dataTable
+                    if (typeProductUpdCbox.DataSource != null)
+                    {
+                        ((IDisposable)typeProductUpdCbox.DataSource).Dispose();
+                    }
+                    var adapter = new OleDbDataAdapter("Select * From ВидТовара", _conn);
+                    var table = new DataTable();
+                    adapter.Fill(table);
+                    typeProductUpdCbox.DataSource = table;
+                    updIdProd = (int)productGrid.CurrentRow.Cells[0].Value;
+                    DataGridViewRow row = productGrid.CurrentRow;
+                    nameProductUpd.Text = row.Cells[1].Value.ToString();
+                    typeProductUpdCbox.Text = row.Cells[2].Value.ToString();
+                    priceProductUpd.Text = row.Cells[3].Value.ToString();
+                    qtyProdUpd.Value = Decimal.Parse(row.Cells[4].Value.ToString());
+                    dateProdUpd.Value = DateTime.Parse(row.Cells[5].Value.ToString());
+                    descrProdUpd.Text = row.Cells[6].Value.ToString();
+                    productGrid.Enabled = false;
+                    productUpdPanel.BringToFront();
+                }
+                if (tables.SelectedTab.Text == "Виды товаров")
+                {
+                    DataGridViewRow row = typeGrid.CurrentRow;
+                    updIdType = int.Parse(row.Cells[0].Value.ToString());
+                    typeNameUpdBox.Text = row.Cells[1].Value.ToString();
+                    descrTypeBox.Text = row.Cells[2].Value.ToString();
+                    typeGrid.Enabled = false;
+                    updTypePanel.BringToFront();
+                }
+                if (tables.SelectedTab.Text == "Клиенты")
+                {
+                    clientGrid.Enabled = false;
+                    DataGridViewRow row = clientGrid.CurrentRow;
+                    updIdClient = int.Parse(row.Cells[0].Value.ToString());
+                    string[] fullName = row.Cells[1].Value.ToString().Split(new char[] { ' ' },
+                        StringSplitOptions.RemoveEmptyEntries);
+                    lastNameUpdBox.Text = fullName[0];
+                    firstNameUpdBox.Text = fullName[1];
+                    sureNameUpdBox.Text = fullName[2];
+                    addressUpdBox.Text = row.Cells[2].Value.ToString();
+                    dateBirthUpdPanelBox.Value = DateTime.Parse(row.Cells[3].Value.ToString());
+                    phoneNumUpdBox.Text = row.Cells[4].Value.ToString();
+                    updClientPanel.BringToFront();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Выбрана некорректная строка");
+            }
+        }
+
+        private void ChangeProduct_Click(object sender, EventArgs e)
+        {
+            string query = $"Update Товар Set " +
+                $"КодВида = {typeProductUpdCbox.SelectedValue}, " +
+                $"Название = '{nameProductUpd.Text}', " +
+                $"Стоимость = {priceProductUpd.Text}, " +
+                $"КолНаСкл = {qtyProdUpd.Value}, " +
+                $"ГодПроизв = @date " +
+                $"Where КодТовара = {updIdProd}";
+            OleDbCommand com = new OleDbCommand(query, _conn);
+            com.Parameters.Add(new OleDbParameter("@date", dateProdUpd.Value.ToShortDateString()));
+            com.ExecuteNonQuery();
+            productUpdPanel.SendToBack();
+            showTables();
+            productGrid.Enabled = true;
+        }
+
+        //close updProduct Panel
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            /*
-            if (nameProductUpdBox.Text != "")
-            {
-                string query = $"Update Товар " +
-                    $"Set КодВида = {typeProductUpdBox.SelectedValue}, Название = '{nameProductUpdBox.Text}', Стоимость = {priceProductUpdBox.Text}, КолНаСкл = {qtyProductUpdBox.Value}, ГодПроизв = @date, Описание = '{descrUpdBox}' " +
-                    $"Where КодТовара = {selectedProduct}";
-               
-                var com = new OleDbCommand(query, _conn);
-                com.Parameters.Add(new OleDbParameter("@date", dateProductUpdBox.Value.ToShortDateString()));
-                com.ExecuteNonQuery();
+            productGrid.Enabled = true;
+            productUpdPanel.SendToBack();
+        }
 
-            }
-            updProductPanel.SendToBack();
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            updTypePanel.SendToBack();
+            typeGrid.Enabled = true;
+        }
+
+        private void UpdateTypeBtn_Click(object sender, EventArgs e)
+        {
+            string query = $"Update ВидТовара Set " +
+                $"НазваниеВида = '{typeNameUpdBox.Text}', " +
+                $"СфераПрименения = '{descrTypeBox.Text}' " +
+                $"Where КодВида = {updIdType}";
+            var com = new OleDbCommand(query, _conn);
+            com.ExecuteNonQuery();
             showTables();
-            */
+            updTypePanel.SendToBack();
+            typeGrid.Enabled = true;
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            clientGrid.Enabled = true;
+            updClientPanel.SendToBack();
+        }
+
+        private void ChangeClientBtn_Click(object sender, EventArgs e)
+        {
+            string query = $"Update Покупатель Set " +
+                $"Фамилия = '{lastNameUpdBox.Text}', " +
+                $"Имя = '{firstNameUpdBox.Text}', " +
+                $"Адрес = '{addressUpdBox.Text}', " +
+                $"ДатаРождения = @date, " +
+                $"Телефон = '{phoneNumUpdBox.Text}' " +
+                $"Where КодПокупателя = {updIdClient}";
+            var com = new OleDbCommand(query, _conn);
+            com.Parameters.Add(new OleDbParameter("@date", 
+                dateBirthUpdPanelBox.Value.ToShortDateString()));
+            com.ExecuteNonQuery();
+            showTables();
+            clientGrid.Enabled = true;
+            updClientPanel.SendToBack();
         }
     }
 }

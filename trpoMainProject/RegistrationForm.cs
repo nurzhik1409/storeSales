@@ -32,14 +32,27 @@ namespace trpoMainProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string hash = AutorizationForm.ComputeHash(passwordBox.Text);
-            string query = $@"Insert Into Продавец(Фамилия, Имя, Отчество, Стаж, Разряд, Адрес, Телефон, Логин, Хэш)
+            if (lastNameBox.Text != "" &&
+                firstNameBox.Text != "" && 
+                sureNameBox.Text != "" &&
+                addressBox.Text != "" &&
+                loginBox.Text != "" &&
+                passwordBox.Text != "" &&
+                expNumeric.Value > 0 && expNumeric.Value < 80)
+            {
+                string hash = AutorizationForm.ComputeHash(passwordBox.Text);
+                string query = $@"Insert Into Продавец(Фамилия, Имя, Отчество, Стаж, Разряд, Адрес, Телефон, Логин, Хэш)
 Values('{lastNameBox.Text}', '{firstNameBox.Text}', '{sureNameBox.Text}', {(int)expNumeric.Value},
 {(int)rankNumeric.Value}, '{addressBox.Text}', '{maskedTextBox1.Text}', '{loginBox.Text}', '{hash}')";
-            OleDbCommand command = new OleDbCommand(query, _con);
-            var result = command.ExecuteNonQuery();
-            MessageBox.Show("Добавлено записей: " + result);
-            Close();
+                OleDbCommand command = new OleDbCommand(query, _con);
+                var result = command.ExecuteNonQuery();
+                MessageBox.Show("Добавлено записей: " + result);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Заполните все поля.");
+            }
         }
     }
 }

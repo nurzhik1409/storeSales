@@ -60,12 +60,16 @@ Where Продавец.Логин = '{loginBox.Text}' AND Продавец.Хэ�
             OleDbCommand command = new OleDbCommand(query, _con);
             var result = command.ExecuteReader();
             
-            if (result.HasRows || loginBox.Text == "admin")
+            if (result.HasRows)
             {
                 result.Read();
                 MainForm.idSeller = loginBox.Text == "admin"? 1 :  result.GetInt32(0);
                 isPass = true;
                 Close();
+            }
+            else
+            {
+                MessageBox.Show("Неправильный пароль или логин.");
             }
         }
 
