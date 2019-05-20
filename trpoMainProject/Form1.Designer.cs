@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCloseMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +55,22 @@
             this.addressClientClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateBirthClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberClientClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updClientPanel = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.addressUpdBox = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.sureNameUpdBox = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.changeClientBtn = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.dateBirthUpdPanelBox = new System.Windows.Forms.DateTimePicker();
+            this.label40 = new System.Windows.Forms.Label();
+            this.phoneNumUpdBox = new System.Windows.Forms.MaskedTextBox();
+            this.firstNameUpdBox = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.lastNameUpdBox = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.addClientPanel = new System.Windows.Forms.Panel();
             this.exitAddClientPanelBtn = new System.Windows.Forms.Button();
             this.addClientButton = new System.Windows.Forms.Button();
@@ -75,6 +91,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.searchTypeBox = new System.Windows.Forms.TextBox();
             this.typeGrid = new System.Windows.Forms.DataGridView();
+            this.idType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameTypeClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDisriptionClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addTypePanel = new System.Windows.Forms.Panel();
             this.exitAddTypePanelBtn = new System.Windows.Forms.Button();
             this.descriptionTypeAddBox = new System.Windows.Forms.RichTextBox();
@@ -83,6 +102,14 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.nameTypeAddBox = new System.Windows.Forms.TextBox();
+            this.updTypePanel = new System.Windows.Forms.Panel();
+            this.updateTypeBtn = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.descrTypeBox = new System.Windows.Forms.RichTextBox();
+            this.typeNameUpdBox = new System.Windows.Forms.TextBox();
+            this.hideUpdTypePanel = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
             this.orderPage = new System.Windows.Forms.TabPage();
             this.resetOrderGrid = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
@@ -98,6 +125,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchBoxOrder = new System.Windows.Forms.TextBox();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
+            this.IdOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullnameOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tables = new System.Windows.Forms.TabControl();
             this.productPage = new System.Windows.Forms.TabPage();
             this.addQtyProduct = new System.Windows.Forms.Panel();
@@ -131,59 +162,30 @@
             this.nameProductAddBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.productUpdPanel = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.nameProductUpd = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.typeProductUpdCbox = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.changeProduct = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.descrProdUpd = new System.Windows.Forms.RichTextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.dateProdUpd = new System.Windows.Forms.DateTimePicker();
+            this.qtyProdUpd = new System.Windows.Forms.NumericUpDown();
             this.label30 = new System.Windows.Forms.Label();
             this.priceProductUpd = new System.Windows.Forms.TextBox();
-            this.qtyProdUpd = new System.Windows.Forms.NumericUpDown();
-            this.dateProdUpd = new System.Windows.Forms.DateTimePicker();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.descrProdUpd = new System.Windows.Forms.RichTextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.changeProduct = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.idType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameTypeClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDisriptionClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumOrderClmn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updTypePanel = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
-            this.hideUpdTypePanel = new System.Windows.Forms.Button();
-            this.typeNameUpdBox = new System.Windows.Forms.TextBox();
-            this.descrTypeBox = new System.Windows.Forms.RichTextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.updateTypeBtn = new System.Windows.Forms.Button();
-            this.updClientPanel = new System.Windows.Forms.Panel();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.lastNameUpdBox = new System.Windows.Forms.TextBox();
-            this.firstNameUpdBox = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.phoneNumUpdBox = new System.Windows.Forms.MaskedTextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.dateBirthUpdPanelBox = new System.Windows.Forms.DateTimePicker();
-            this.label41 = new System.Windows.Forms.Label();
-            this.changeClientBtn = new System.Windows.Forms.Button();
-            this.sureNameUpdBox = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.addressUpdBox = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.typeProductUpdCbox = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.nameProductUpd = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.clientsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).BeginInit();
+            this.updClientPanel.SuspendLayout();
             this.addClientPanel.SuspendLayout();
             this.typeProductPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeGrid)).BeginInit();
             this.addTypePanel.SuspendLayout();
+            this.updTypePanel.SuspendLayout();
             this.orderPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toPriceNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromPriceNumeric)).BeginInit();
@@ -197,8 +199,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.qtyProductAddBox)).BeginInit();
             this.productUpdPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProdUpd)).BeginInit();
-            this.updTypePanel.SuspendLayout();
-            this.updClientPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -244,21 +244,21 @@
             // recordAddMenuBtn
             // 
             this.recordAddMenuBtn.Name = "recordAddMenuBtn";
-            this.recordAddMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.recordAddMenuBtn.Size = new System.Drawing.Size(128, 22);
             this.recordAddMenuBtn.Text = "Добавить";
             this.recordAddMenuBtn.Click += new System.EventHandler(this.recordAddMenuBtn_Click);
             // 
             // recordUpdMenuBtn
             // 
             this.recordUpdMenuBtn.Name = "recordUpdMenuBtn";
-            this.recordUpdMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.recordUpdMenuBtn.Size = new System.Drawing.Size(128, 22);
             this.recordUpdMenuBtn.Text = "Изменить";
             this.recordUpdMenuBtn.Click += new System.EventHandler(this.RecordUpdMenuBtn_Click);
             // 
             // recordDelMenuBtn
             // 
             this.recordDelMenuBtn.Name = "recordDelMenuBtn";
-            this.recordDelMenuBtn.Size = new System.Drawing.Size(180, 22);
+            this.recordDelMenuBtn.Size = new System.Drawing.Size(128, 22);
             this.recordDelMenuBtn.Text = "Удалить";
             this.recordDelMenuBtn.Click += new System.EventHandler(this.recordDelMenuBtn_Click);
             // 
@@ -274,14 +274,14 @@
             // ведомостьВWordToolStripMenuItem
             // 
             this.ведомостьВWordToolStripMenuItem.Name = "ведомостьВWordToolStripMenuItem";
-            this.ведомостьВWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ведомостьВWordToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.ведомостьВWordToolStripMenuItem.Text = "Ведомость в word";
             this.ведомостьВWordToolStripMenuItem.Click += new System.EventHandler(this.ВедомостьВWordToolStripMenuItem_Click);
             // 
             // ведомостьВExcelToolStripMenuItem
             // 
             this.ведомостьВExcelToolStripMenuItem.Name = "ведомостьВExcelToolStripMenuItem";
-            this.ведомостьВExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ведомостьВExcelToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.ведомостьВExcelToolStripMenuItem.Text = "Ведомость в excel";
             this.ведомостьВExcelToolStripMenuItem.Click += new System.EventHandler(this.ВедомостьВExcelToolStripMenuItem_Click);
             // 
@@ -372,8 +372,8 @@
             // 
             // fullnameClmn
             // 
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fullnameClmn.DefaultCellStyle = dataGridViewCellStyle37;
             this.fullnameClmn.HeaderText = "ФИО";
             this.fullnameClmn.Name = "fullnameClmn";
             this.fullnameClmn.ReadOnly = true;
@@ -381,8 +381,8 @@
             // 
             // addressClientClmn
             // 
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addressClientClmn.DefaultCellStyle = dataGridViewCellStyle38;
             this.addressClientClmn.HeaderText = "Адрес";
             this.addressClientClmn.Name = "addressClientClmn";
             this.addressClientClmn.ReadOnly = true;
@@ -396,13 +396,168 @@
             // 
             // phoneNumberClientClmn
             // 
-            dataGridViewCellStyle7.Format = "+375 (00) 000 00 00";
-            dataGridViewCellStyle7.NullValue = null;
-            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle39.Format = "+375 (00) 000 00 00";
+            dataGridViewCellStyle39.NullValue = null;
+            this.phoneNumberClientClmn.DefaultCellStyle = dataGridViewCellStyle39;
             this.phoneNumberClientClmn.HeaderText = "Телефон";
             this.phoneNumberClientClmn.Name = "phoneNumberClientClmn";
             this.phoneNumberClientClmn.ReadOnly = true;
             this.phoneNumberClientClmn.Width = 150;
+            // 
+            // updClientPanel
+            // 
+            this.updClientPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.updClientPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updClientPanel.Controls.Add(this.button3);
+            this.updClientPanel.Controls.Add(this.addressUpdBox);
+            this.updClientPanel.Controls.Add(this.label43);
+            this.updClientPanel.Controls.Add(this.sureNameUpdBox);
+            this.updClientPanel.Controls.Add(this.label42);
+            this.updClientPanel.Controls.Add(this.changeClientBtn);
+            this.updClientPanel.Controls.Add(this.label41);
+            this.updClientPanel.Controls.Add(this.dateBirthUpdPanelBox);
+            this.updClientPanel.Controls.Add(this.label40);
+            this.updClientPanel.Controls.Add(this.phoneNumUpdBox);
+            this.updClientPanel.Controls.Add(this.firstNameUpdBox);
+            this.updClientPanel.Controls.Add(this.label39);
+            this.updClientPanel.Controls.Add(this.lastNameUpdBox);
+            this.updClientPanel.Controls.Add(this.label38);
+            this.updClientPanel.Controls.Add(this.label37);
+            this.updClientPanel.Location = new System.Drawing.Point(155, 42);
+            this.updClientPanel.Name = "updClientPanel";
+            this.updClientPanel.Size = new System.Drawing.Size(261, 208);
+            this.updClientPanel.TabIndex = 8;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(237, -1);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(23, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
+            // addressUpdBox
+            // 
+            this.addressUpdBox.Location = new System.Drawing.Point(118, 57);
+            this.addressUpdBox.Name = "addressUpdBox";
+            this.addressUpdBox.Size = new System.Drawing.Size(138, 20);
+            this.addressUpdBox.TabIndex = 13;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(118, 41);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(38, 13);
+            this.label43.TabIndex = 12;
+            this.label43.Text = "Адрес";
+            // 
+            // sureNameUpdBox
+            // 
+            this.sureNameUpdBox.Location = new System.Drawing.Point(3, 144);
+            this.sureNameUpdBox.Name = "sureNameUpdBox";
+            this.sureNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.sureNameUpdBox.TabIndex = 11;
+            this.sureNameUpdBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SureNameUpdBox_KeyPress);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 128);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(54, 13);
+            this.label42.TabIndex = 10;
+            this.label42.Text = "Отчество";
+            // 
+            // changeClientBtn
+            // 
+            this.changeClientBtn.Location = new System.Drawing.Point(3, 180);
+            this.changeClientBtn.Name = "changeClientBtn";
+            this.changeClientBtn.Size = new System.Drawing.Size(253, 23);
+            this.changeClientBtn.TabIndex = 9;
+            this.changeClientBtn.Text = "Изменить";
+            this.changeClientBtn.UseVisualStyleBackColor = true;
+            this.changeClientBtn.Click += new System.EventHandler(this.ChangeClientBtn_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(118, 87);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(86, 13);
+            this.label41.TabIndex = 8;
+            this.label41.Text = "Дата рождения";
+            // 
+            // dateBirthUpdPanelBox
+            // 
+            this.dateBirthUpdPanelBox.Location = new System.Drawing.Point(118, 104);
+            this.dateBirthUpdPanelBox.Name = "dateBirthUpdPanelBox";
+            this.dateBirthUpdPanelBox.Size = new System.Drawing.Size(138, 20);
+            this.dateBirthUpdPanelBox.TabIndex = 7;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(118, 128);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(52, 13);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Телефон";
+            // 
+            // phoneNumUpdBox
+            // 
+            this.phoneNumUpdBox.Location = new System.Drawing.Point(118, 144);
+            this.phoneNumUpdBox.Mask = "000000000";
+            this.phoneNumUpdBox.Name = "phoneNumUpdBox";
+            this.phoneNumUpdBox.Size = new System.Drawing.Size(138, 20);
+            this.phoneNumUpdBox.TabIndex = 5;
+            // 
+            // firstNameUpdBox
+            // 
+            this.firstNameUpdBox.Location = new System.Drawing.Point(3, 101);
+            this.firstNameUpdBox.Name = "firstNameUpdBox";
+            this.firstNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.firstNameUpdBox.TabIndex = 4;
+            this.firstNameUpdBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstNameUpdBox_KeyPress);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 85);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(29, 13);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "Имя";
+            // 
+            // lastNameUpdBox
+            // 
+            this.lastNameUpdBox.Location = new System.Drawing.Point(3, 57);
+            this.lastNameUpdBox.Name = "lastNameUpdBox";
+            this.lastNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.lastNameUpdBox.TabIndex = 2;
+            this.lastNameUpdBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameUpdBox_KeyPress);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(3, 41);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(56, 13);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Фамилия";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.Location = new System.Drawing.Point(-1, 4);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(112, 24);
+            this.label37.TabIndex = 0;
+            this.label37.Text = "Изменение";
             // 
             // addClientPanel
             // 
@@ -510,6 +665,7 @@
             this.sureNameAddBox.Size = new System.Drawing.Size(100, 20);
             this.sureNameAddBox.TabIndex = 6;
             this.sureNameAddBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.sureNameAddBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SureNameAddBox_KeyPress);
             // 
             // label19
             // 
@@ -526,6 +682,7 @@
             this.firstNameAddBox.Name = "firstNameAddBox";
             this.firstNameAddBox.Size = new System.Drawing.Size(100, 20);
             this.firstNameAddBox.TabIndex = 4;
+            this.firstNameAddBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstNameAddBox_KeyPress);
             // 
             // label18
             // 
@@ -542,6 +699,7 @@
             this.lastNameAddBox.Name = "lastNameAddBox";
             this.lastNameAddBox.Size = new System.Drawing.Size(100, 20);
             this.lastNameAddBox.TabIndex = 2;
+            this.lastNameAddBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameAddBox_KeyPress);
             // 
             // label17
             // 
@@ -604,6 +762,28 @@
             this.typeGrid.ReadOnly = true;
             this.typeGrid.Size = new System.Drawing.Size(641, 298);
             this.typeGrid.TabIndex = 0;
+            // 
+            // idType
+            // 
+            this.idType.HeaderText = "Id";
+            this.idType.Name = "idType";
+            this.idType.ReadOnly = true;
+            this.idType.Visible = false;
+            // 
+            // nameTypeClmn
+            // 
+            this.nameTypeClmn.HeaderText = "Название вида";
+            this.nameTypeClmn.MinimumWidth = 150;
+            this.nameTypeClmn.Name = "nameTypeClmn";
+            this.nameTypeClmn.ReadOnly = true;
+            this.nameTypeClmn.Width = 150;
+            // 
+            // typeDisriptionClmn
+            // 
+            this.typeDisriptionClmn.HeaderText = "Описание типа";
+            this.typeDisriptionClmn.Name = "typeDisriptionClmn";
+            this.typeDisriptionClmn.ReadOnly = true;
+            this.typeDisriptionClmn.Width = 425;
             // 
             // addTypePanel
             // 
@@ -685,6 +865,86 @@
             this.nameTypeAddBox.Name = "nameTypeAddBox";
             this.nameTypeAddBox.Size = new System.Drawing.Size(203, 20);
             this.nameTypeAddBox.TabIndex = 0;
+            // 
+            // updTypePanel
+            // 
+            this.updTypePanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.updTypePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updTypePanel.Controls.Add(this.updateTypeBtn);
+            this.updTypePanel.Controls.Add(this.label36);
+            this.updTypePanel.Controls.Add(this.label35);
+            this.updTypePanel.Controls.Add(this.descrTypeBox);
+            this.updTypePanel.Controls.Add(this.typeNameUpdBox);
+            this.updTypePanel.Controls.Add(this.hideUpdTypePanel);
+            this.updTypePanel.Controls.Add(this.label34);
+            this.updTypePanel.Location = new System.Drawing.Point(207, 47);
+            this.updTypePanel.Name = "updTypePanel";
+            this.updTypePanel.Size = new System.Drawing.Size(215, 178);
+            this.updTypePanel.TabIndex = 6;
+            // 
+            // updateTypeBtn
+            // 
+            this.updateTypeBtn.Location = new System.Drawing.Point(4, 150);
+            this.updateTypeBtn.Name = "updateTypeBtn";
+            this.updateTypeBtn.Size = new System.Drawing.Size(206, 23);
+            this.updateTypeBtn.TabIndex = 6;
+            this.updateTypeBtn.Text = "Изменить";
+            this.updateTypeBtn.UseVisualStyleBackColor = true;
+            this.updateTypeBtn.Click += new System.EventHandler(this.UpdateTypeBtn_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 32);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(84, 13);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Название вида";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 73);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(57, 13);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "Описание";
+            // 
+            // descrTypeBox
+            // 
+            this.descrTypeBox.Location = new System.Drawing.Point(4, 89);
+            this.descrTypeBox.Name = "descrTypeBox";
+            this.descrTypeBox.Size = new System.Drawing.Size(206, 57);
+            this.descrTypeBox.TabIndex = 3;
+            this.descrTypeBox.Text = "";
+            // 
+            // typeNameUpdBox
+            // 
+            this.typeNameUpdBox.Location = new System.Drawing.Point(4, 50);
+            this.typeNameUpdBox.Name = "typeNameUpdBox";
+            this.typeNameUpdBox.Size = new System.Drawing.Size(100, 20);
+            this.typeNameUpdBox.TabIndex = 2;
+            // 
+            // hideUpdTypePanel
+            // 
+            this.hideUpdTypePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.hideUpdTypePanel.Location = new System.Drawing.Point(191, 0);
+            this.hideUpdTypePanel.Name = "hideUpdTypePanel";
+            this.hideUpdTypePanel.Size = new System.Drawing.Size(23, 23);
+            this.hideUpdTypePanel.TabIndex = 1;
+            this.hideUpdTypePanel.Text = "X";
+            this.hideUpdTypePanel.UseVisualStyleBackColor = true;
+            this.hideUpdTypePanel.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.Location = new System.Drawing.Point(0, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(175, 20);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Изменить вид товара";
             // 
             // orderPage
             // 
@@ -806,6 +1066,8 @@
             this.fullNameBoxOrder.Name = "fullNameBoxOrder";
             this.fullNameBoxOrder.Size = new System.Drawing.Size(177, 20);
             this.fullNameBoxOrder.TabIndex = 4;
+            this.fullNameBoxOrder.TextChanged += new System.EventHandler(this.FullNameBoxOrder_TextChanged);
+            this.fullNameBoxOrder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullNameBoxOrder_KeyPress);
             // 
             // label2
             // 
@@ -849,6 +1111,32 @@
             this.ordersGrid.TabIndex = 0;
             this.ordersGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.ordersGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGrid_CellDoubleClick);
+            // 
+            // IdOrderClmn
+            // 
+            this.IdOrderClmn.HeaderText = "Id";
+            this.IdOrderClmn.Name = "IdOrderClmn";
+            this.IdOrderClmn.ReadOnly = true;
+            this.IdOrderClmn.Visible = false;
+            // 
+            // fullnameOrderClmn
+            // 
+            this.fullnameOrderClmn.HeaderText = "ФИО";
+            this.fullnameOrderClmn.Name = "fullnameOrderClmn";
+            this.fullnameOrderClmn.ReadOnly = true;
+            this.fullnameOrderClmn.Width = 300;
+            // 
+            // dateOrderClmn
+            // 
+            this.dateOrderClmn.HeaderText = "Дата заказа";
+            this.dateOrderClmn.Name = "dateOrderClmn";
+            this.dateOrderClmn.ReadOnly = true;
+            // 
+            // sumOrderClmn
+            // 
+            this.sumOrderClmn.HeaderText = "Сумма заказа";
+            this.sumOrderClmn.Name = "sumOrderClmn";
+            this.sumOrderClmn.ReadOnly = true;
             // 
             // tables
             // 
@@ -1006,8 +1294,8 @@
             // 
             // descriptionProductClmn
             // 
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.descriptionProductClmn.DefaultCellStyle = dataGridViewCellStyle40;
             this.descriptionProductClmn.HeaderText = "Описание продукта";
             this.descriptionProductClmn.Name = "descriptionProductClmn";
             this.descriptionProductClmn.ReadOnly = true;
@@ -1159,6 +1447,7 @@
             this.nameProductAddBox.Name = "nameProductAddBox";
             this.nameProductAddBox.Size = new System.Drawing.Size(121, 20);
             this.nameProductAddBox.TabIndex = 1;
+            this.nameProductAddBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameProductAddBox_KeyPress);
             // 
             // label7
             // 
@@ -1194,48 +1483,80 @@
             this.productUpdPanel.Size = new System.Drawing.Size(344, 227);
             this.productUpdPanel.TabIndex = 6;
             // 
-            // label27
+            // button2
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(5, 6);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(158, 24);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Изменить товар";
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(320, -1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 24);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
-            // nameProductUpd
+            // changeProduct
             // 
-            this.nameProductUpd.Location = new System.Drawing.Point(5, 64);
-            this.nameProductUpd.Name = "nameProductUpd";
-            this.nameProductUpd.Size = new System.Drawing.Size(121, 20);
-            this.nameProductUpd.TabIndex = 1;
+            this.changeProduct.Location = new System.Drawing.Point(134, 195);
+            this.changeProduct.Name = "changeProduct";
+            this.changeProduct.Size = new System.Drawing.Size(204, 23);
+            this.changeProduct.TabIndex = 13;
+            this.changeProduct.Text = "Изменить";
+            this.changeProduct.UseVisualStyleBackColor = true;
+            this.changeProduct.Click += new System.EventHandler(this.ChangeProduct_Click);
             // 
-            // label28
+            // label33
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(2, 48);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(109, 13);
-            this.label28.TabIndex = 2;
-            this.label28.Text = " Название продукта";
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(135, 92);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Описание";
             // 
-            // typeProductUpdCbox
+            // descrProdUpd
             // 
-            this.typeProductUpdCbox.FormattingEnabled = true;
-            this.typeProductUpdCbox.Location = new System.Drawing.Point(5, 108);
-            this.typeProductUpdCbox.Name = "typeProductUpdCbox";
-            this.typeProductUpdCbox.Size = new System.Drawing.Size(121, 21);
-            this.typeProductUpdCbox.TabIndex = 3;
+            this.descrProdUpd.Location = new System.Drawing.Point(134, 108);
+            this.descrProdUpd.Name = "descrProdUpd";
+            this.descrProdUpd.Size = new System.Drawing.Size(204, 81);
+            this.descrProdUpd.TabIndex = 11;
+            this.descrProdUpd.Text = "";
             // 
-            // label29
+            // label32
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(5, 91);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(82, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Тип продукции";
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 178);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(99, 13);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Год производства";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(134, 50);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(120, 13);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "Количество на складе";
+            // 
+            // dateProdUpd
+            // 
+            this.dateProdUpd.Location = new System.Drawing.Point(6, 194);
+            this.dateProdUpd.Name = "dateProdUpd";
+            this.dateProdUpd.Size = new System.Drawing.Size(120, 20);
+            this.dateProdUpd.TabIndex = 8;
+            // 
+            // qtyProdUpd
+            // 
+            this.qtyProdUpd.Location = new System.Drawing.Point(134, 65);
+            this.qtyProdUpd.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.qtyProdUpd.Name = "qtyProdUpd";
+            this.qtyProdUpd.Size = new System.Drawing.Size(120, 20);
+            this.qtyProdUpd.TabIndex = 7;
             // 
             // label30
             // 
@@ -1253,360 +1574,48 @@
             this.priceProductUpd.Size = new System.Drawing.Size(121, 20);
             this.priceProductUpd.TabIndex = 5;
             // 
-            // qtyProdUpd
-            // 
-            this.qtyProdUpd.Location = new System.Drawing.Point(134, 65);
-            this.qtyProdUpd.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.qtyProdUpd.Name = "qtyProdUpd";
-            this.qtyProdUpd.Size = new System.Drawing.Size(120, 20);
-            this.qtyProdUpd.TabIndex = 7;
-            // 
-            // dateProdUpd
-            // 
-            this.dateProdUpd.Location = new System.Drawing.Point(6, 194);
-            this.dateProdUpd.Name = "dateProdUpd";
-            this.dateProdUpd.Size = new System.Drawing.Size(120, 20);
-            this.dateProdUpd.TabIndex = 8;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(134, 50);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(120, 13);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "Количество на складе";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 178);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(99, 13);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "Год производства";
-            // 
-            // descrProdUpd
-            // 
-            this.descrProdUpd.Location = new System.Drawing.Point(134, 108);
-            this.descrProdUpd.Name = "descrProdUpd";
-            this.descrProdUpd.Size = new System.Drawing.Size(204, 81);
-            this.descrProdUpd.TabIndex = 11;
-            this.descrProdUpd.Text = "";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(135, 92);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(57, 13);
-            this.label33.TabIndex = 12;
-            this.label33.Text = "Описание";
-            // 
-            // changeProduct
-            // 
-            this.changeProduct.Location = new System.Drawing.Point(134, 195);
-            this.changeProduct.Name = "changeProduct";
-            this.changeProduct.Size = new System.Drawing.Size(204, 23);
-            this.changeProduct.TabIndex = 13;
-            this.changeProduct.Text = "Изменить";
-            this.changeProduct.UseVisualStyleBackColor = true;
-            this.changeProduct.Click += new System.EventHandler(this.ChangeProduct_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(320, -1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 24);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
-            // 
-            // idType
-            // 
-            this.idType.HeaderText = "Id";
-            this.idType.Name = "idType";
-            this.idType.ReadOnly = true;
-            this.idType.Visible = false;
-            // 
-            // nameTypeClmn
-            // 
-            this.nameTypeClmn.HeaderText = "Название вида";
-            this.nameTypeClmn.MinimumWidth = 150;
-            this.nameTypeClmn.Name = "nameTypeClmn";
-            this.nameTypeClmn.ReadOnly = true;
-            this.nameTypeClmn.Width = 150;
-            // 
-            // typeDisriptionClmn
-            // 
-            this.typeDisriptionClmn.HeaderText = "Описание типа";
-            this.typeDisriptionClmn.Name = "typeDisriptionClmn";
-            this.typeDisriptionClmn.ReadOnly = true;
-            this.typeDisriptionClmn.Width = 425;
-            // 
-            // IdOrderClmn
-            // 
-            this.IdOrderClmn.HeaderText = "Id";
-            this.IdOrderClmn.Name = "IdOrderClmn";
-            this.IdOrderClmn.ReadOnly = true;
-            this.IdOrderClmn.Visible = false;
-            // 
-            // fullnameOrderClmn
-            // 
-            this.fullnameOrderClmn.HeaderText = "ФИО";
-            this.fullnameOrderClmn.Name = "fullnameOrderClmn";
-            this.fullnameOrderClmn.ReadOnly = true;
-            this.fullnameOrderClmn.Width = 300;
-            // 
-            // dateOrderClmn
-            // 
-            this.dateOrderClmn.HeaderText = "Дата заказа";
-            this.dateOrderClmn.Name = "dateOrderClmn";
-            this.dateOrderClmn.ReadOnly = true;
-            // 
-            // sumOrderClmn
-            // 
-            this.sumOrderClmn.HeaderText = "Сумма заказа";
-            this.sumOrderClmn.Name = "sumOrderClmn";
-            this.sumOrderClmn.ReadOnly = true;
-            // 
-            // updTypePanel
-            // 
-            this.updTypePanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.updTypePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.updTypePanel.Controls.Add(this.updateTypeBtn);
-            this.updTypePanel.Controls.Add(this.label36);
-            this.updTypePanel.Controls.Add(this.label35);
-            this.updTypePanel.Controls.Add(this.descrTypeBox);
-            this.updTypePanel.Controls.Add(this.typeNameUpdBox);
-            this.updTypePanel.Controls.Add(this.hideUpdTypePanel);
-            this.updTypePanel.Controls.Add(this.label34);
-            this.updTypePanel.Location = new System.Drawing.Point(207, 47);
-            this.updTypePanel.Name = "updTypePanel";
-            this.updTypePanel.Size = new System.Drawing.Size(215, 178);
-            this.updTypePanel.TabIndex = 6;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label34.Location = new System.Drawing.Point(0, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(175, 20);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Изменить вид товара";
-            // 
-            // hideUpdTypePanel
-            // 
-            this.hideUpdTypePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.hideUpdTypePanel.Location = new System.Drawing.Point(191, 0);
-            this.hideUpdTypePanel.Name = "hideUpdTypePanel";
-            this.hideUpdTypePanel.Size = new System.Drawing.Size(23, 23);
-            this.hideUpdTypePanel.TabIndex = 1;
-            this.hideUpdTypePanel.Text = "X";
-            this.hideUpdTypePanel.UseVisualStyleBackColor = true;
-            this.hideUpdTypePanel.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // typeNameUpdBox
-            // 
-            this.typeNameUpdBox.Location = new System.Drawing.Point(4, 50);
-            this.typeNameUpdBox.Name = "typeNameUpdBox";
-            this.typeNameUpdBox.Size = new System.Drawing.Size(100, 20);
-            this.typeNameUpdBox.TabIndex = 2;
-            // 
-            // descrTypeBox
-            // 
-            this.descrTypeBox.Location = new System.Drawing.Point(4, 89);
-            this.descrTypeBox.Name = "descrTypeBox";
-            this.descrTypeBox.Size = new System.Drawing.Size(206, 57);
-            this.descrTypeBox.TabIndex = 3;
-            this.descrTypeBox.Text = "";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(3, 73);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(57, 13);
-            this.label35.TabIndex = 4;
-            this.label35.Text = "Описание";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(3, 32);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(84, 13);
-            this.label36.TabIndex = 5;
-            this.label36.Text = "Название вида";
-            // 
-            // updateTypeBtn
-            // 
-            this.updateTypeBtn.Location = new System.Drawing.Point(4, 150);
-            this.updateTypeBtn.Name = "updateTypeBtn";
-            this.updateTypeBtn.Size = new System.Drawing.Size(206, 23);
-            this.updateTypeBtn.TabIndex = 6;
-            this.updateTypeBtn.Text = "Изменить";
-            this.updateTypeBtn.UseVisualStyleBackColor = true;
-            this.updateTypeBtn.Click += new System.EventHandler(this.UpdateTypeBtn_Click);
-            // 
-            // updClientPanel
-            // 
-            this.updClientPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.updClientPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.updClientPanel.Controls.Add(this.button3);
-            this.updClientPanel.Controls.Add(this.addressUpdBox);
-            this.updClientPanel.Controls.Add(this.label43);
-            this.updClientPanel.Controls.Add(this.sureNameUpdBox);
-            this.updClientPanel.Controls.Add(this.label42);
-            this.updClientPanel.Controls.Add(this.changeClientBtn);
-            this.updClientPanel.Controls.Add(this.label41);
-            this.updClientPanel.Controls.Add(this.dateBirthUpdPanelBox);
-            this.updClientPanel.Controls.Add(this.label40);
-            this.updClientPanel.Controls.Add(this.phoneNumUpdBox);
-            this.updClientPanel.Controls.Add(this.firstNameUpdBox);
-            this.updClientPanel.Controls.Add(this.label39);
-            this.updClientPanel.Controls.Add(this.lastNameUpdBox);
-            this.updClientPanel.Controls.Add(this.label38);
-            this.updClientPanel.Controls.Add(this.label37);
-            this.updClientPanel.Location = new System.Drawing.Point(155, 42);
-            this.updClientPanel.Name = "updClientPanel";
-            this.updClientPanel.Size = new System.Drawing.Size(261, 208);
-            this.updClientPanel.TabIndex = 8;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label37.Location = new System.Drawing.Point(-1, 4);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(112, 24);
-            this.label37.TabIndex = 0;
-            this.label37.Text = "Изменение";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(3, 41);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(56, 13);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "Фамилия";
-            // 
-            // lastNameUpdBox
-            // 
-            this.lastNameUpdBox.Location = new System.Drawing.Point(3, 57);
-            this.lastNameUpdBox.Name = "lastNameUpdBox";
-            this.lastNameUpdBox.Size = new System.Drawing.Size(100, 20);
-            this.lastNameUpdBox.TabIndex = 2;
-            // 
-            // firstNameUpdBox
-            // 
-            this.firstNameUpdBox.Location = new System.Drawing.Point(3, 101);
-            this.firstNameUpdBox.Name = "firstNameUpdBox";
-            this.firstNameUpdBox.Size = new System.Drawing.Size(100, 20);
-            this.firstNameUpdBox.TabIndex = 4;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(3, 85);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(29, 13);
-            this.label39.TabIndex = 3;
-            this.label39.Text = "Имя";
-            // 
-            // phoneNumUpdBox
-            // 
-            this.phoneNumUpdBox.Location = new System.Drawing.Point(118, 144);
-            this.phoneNumUpdBox.Mask = "000000000";
-            this.phoneNumUpdBox.Name = "phoneNumUpdBox";
-            this.phoneNumUpdBox.Size = new System.Drawing.Size(138, 20);
-            this.phoneNumUpdBox.TabIndex = 5;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(118, 128);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(52, 13);
-            this.label40.TabIndex = 6;
-            this.label40.Text = "Телефон";
-            // 
-            // dateBirthUpdPanelBox
-            // 
-            this.dateBirthUpdPanelBox.Location = new System.Drawing.Point(118, 104);
-            this.dateBirthUpdPanelBox.Name = "dateBirthUpdPanelBox";
-            this.dateBirthUpdPanelBox.Size = new System.Drawing.Size(138, 20);
-            this.dateBirthUpdPanelBox.TabIndex = 7;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(118, 87);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(86, 13);
-            this.label41.TabIndex = 8;
-            this.label41.Text = "Дата рождения";
-            // 
-            // changeClientBtn
-            // 
-            this.changeClientBtn.Location = new System.Drawing.Point(3, 180);
-            this.changeClientBtn.Name = "changeClientBtn";
-            this.changeClientBtn.Size = new System.Drawing.Size(253, 23);
-            this.changeClientBtn.TabIndex = 9;
-            this.changeClientBtn.Text = "Изменить";
-            this.changeClientBtn.UseVisualStyleBackColor = true;
-            this.changeClientBtn.Click += new System.EventHandler(this.ChangeClientBtn_Click);
-            // 
-            // sureNameUpdBox
-            // 
-            this.sureNameUpdBox.Location = new System.Drawing.Point(3, 144);
-            this.sureNameUpdBox.Name = "sureNameUpdBox";
-            this.sureNameUpdBox.Size = new System.Drawing.Size(100, 20);
-            this.sureNameUpdBox.TabIndex = 11;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(3, 128);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(54, 13);
-            this.label42.TabIndex = 10;
-            this.label42.Text = "Отчество";
-            // 
-            // addressUpdBox
-            // 
-            this.addressUpdBox.Location = new System.Drawing.Point(118, 57);
-            this.addressUpdBox.Name = "addressUpdBox";
-            this.addressUpdBox.Size = new System.Drawing.Size(138, 20);
-            this.addressUpdBox.TabIndex = 13;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(118, 41);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(38, 13);
-            this.label43.TabIndex = 12;
-            this.label43.Text = "Адрес";
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(237, -1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(23, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "X";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(5, 91);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(82, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Тип продукции";
+            // 
+            // typeProductUpdCbox
+            // 
+            this.typeProductUpdCbox.FormattingEnabled = true;
+            this.typeProductUpdCbox.Location = new System.Drawing.Point(5, 108);
+            this.typeProductUpdCbox.Name = "typeProductUpdCbox";
+            this.typeProductUpdCbox.Size = new System.Drawing.Size(121, 21);
+            this.typeProductUpdCbox.TabIndex = 3;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(2, 48);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(109, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = " Название продукта";
+            // 
+            // nameProductUpd
+            // 
+            this.nameProductUpd.Location = new System.Drawing.Point(5, 64);
+            this.nameProductUpd.Name = "nameProductUpd";
+            this.nameProductUpd.Size = new System.Drawing.Size(121, 20);
+            this.nameProductUpd.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.Location = new System.Drawing.Point(5, 6);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(158, 24);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Изменить товар";
             // 
             // MainForm
             // 
@@ -1626,6 +1635,8 @@
             this.clientsPage.ResumeLayout(false);
             this.clientsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientGrid)).EndInit();
+            this.updClientPanel.ResumeLayout(false);
+            this.updClientPanel.PerformLayout();
             this.addClientPanel.ResumeLayout(false);
             this.addClientPanel.PerformLayout();
             this.typeProductPage.ResumeLayout(false);
@@ -1633,6 +1644,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeGrid)).EndInit();
             this.addTypePanel.ResumeLayout(false);
             this.addTypePanel.PerformLayout();
+            this.updTypePanel.ResumeLayout(false);
+            this.updTypePanel.PerformLayout();
             this.orderPage.ResumeLayout(false);
             this.orderPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toPriceNumeric)).EndInit();
@@ -1651,10 +1664,6 @@
             this.productUpdPanel.ResumeLayout(false);
             this.productUpdPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qtyProdUpd)).EndInit();
-            this.updTypePanel.ResumeLayout(false);
-            this.updTypePanel.PerformLayout();
-            this.updClientPanel.ResumeLayout(false);
-            this.updClientPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

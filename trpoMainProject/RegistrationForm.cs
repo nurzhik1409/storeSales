@@ -33,7 +33,7 @@ namespace trpoMainProject
         private void button1_Click(object sender, EventArgs e)
         {
             if (lastNameBox.Text != "" &&
-                firstNameBox.Text != "" && 
+                firstNameBox.Text != "" &&
                 sureNameBox.Text != "" &&
                 addressBox.Text != "" &&
                 loginBox.Text != "" &&
@@ -52,6 +52,33 @@ Values('{lastNameBox.Text}', '{firstNameBox.Text}', '{sureNameBox.Text}', {(int)
             else
             {
                 MessageBox.Show("Заполните все поля.");
+            }
+        }
+
+        private void LastNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void FirstNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void SureNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
             }
         }
     }

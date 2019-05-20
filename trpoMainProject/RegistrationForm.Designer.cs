@@ -66,6 +66,7 @@
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(100, 20);
             this.lastNameBox.TabIndex = 1;
+            this.lastNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameBox_KeyPress);
             // 
             // firstNameBox
             // 
@@ -73,6 +74,7 @@
             this.firstNameBox.Name = "firstNameBox";
             this.firstNameBox.Size = new System.Drawing.Size(100, 20);
             this.firstNameBox.TabIndex = 3;
+            this.firstNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstNameBox_KeyPress);
             // 
             // label2
             // 
@@ -89,6 +91,7 @@
             this.sureNameBox.Name = "sureNameBox";
             this.sureNameBox.Size = new System.Drawing.Size(100, 20);
             this.sureNameBox.TabIndex = 5;
+            this.sureNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SureNameBox_KeyPress);
             // 
             // label3
             // 
@@ -144,6 +147,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(119, 108);
+            this.maskedTextBox1.Mask = "000000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
             this.maskedTextBox1.TabIndex = 9;

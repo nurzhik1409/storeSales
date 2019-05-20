@@ -28,7 +28,7 @@ namespace trpoMainProject
             InitializeComponent();
             changeTemplateGrid();
             dbInit();
-            //autariztion();
+            autariztion();
             //tableProperty();
             showTables();
         }
@@ -761,6 +761,75 @@ Where КодЗаказа = {idOrder}";
             showTables();
             clientGrid.Enabled = true;
             updClientPanel.SendToBack();
+        }
+
+        private void FullNameBoxOrder_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FullNameBoxOrder_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void LastNameUpdBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void FirstNameUpdBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void SureNameUpdBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void LastNameAddBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void FirstNameAddBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void SureNameAddBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void NameProductAddBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
